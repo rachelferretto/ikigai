@@ -21,15 +21,15 @@ justin = User.create(firstname:'Justin', lastname: 'Bieber', email: 'jb@email.co
 serena = User.create(firstname:'Serena', lastname: 'Williams', email: 'sw@email.com', profile_url: 'https://media.glamour.com/photos/5b71a0895caff06c9f00aeec/master/w_644,c_limit/serena-williams-lede.jpg', zip_code: 3070, bio: '')
 
 
-skill1 = Skill.create(keyword: '', user_id: oprah, category: 'Writing')
+skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
 
-skill2 = Skill.create(keyword: '', user_id: gordon, category: 'Food and Drink')
+skill2 = Skill.create(keyword: '', user: gordon, category: 'Food and Drink')
 
-skill3 = Skill.create(keyword: '', user_id: richard, category: 'Career and Business')
+skill3 = Skill.create(keyword: '', user: richard, category: 'Career and Business')
 
-skill4 = Skill.create(keyword: '', user_id: justin, category: 'Music')
+skill4 = Skill.create(keyword: '', user: justin, category: 'Music')
 
-skill5 = Skill.create(keyword: '', user_id: serena, category: 'Sports and Fitness')
+skill5 = Skill.create(keyword: '', user: serena, category: 'Sports and Fitness')
 
 
 categories = ["Health and Wellness","Outdoor and adventure", "Technology","Family","Sports and Fitness", "Academia","Photography","Food and Drink", "Writing", "Language and Culture","Music","Movements","LGBTQ","Film","Sci-fi and games","Beliefs","Arts","Pets","Hobbies and crafts","Fashion and Beauty","Career and Business","Industry and Trades"]
@@ -41,12 +41,12 @@ c.save
 end
 
 
-interest1 = Interest.create(keyword: '', user_id: oprah, category: 'Photography')
+interest1 = Interest.create(keyword: '', user: oprah, category: 'Photography')
 
-interest2 = Interest.create(keyword: '', user_id: gordon, category: 'Career and Business')
+interest2 = Interest.create(keyword: '', user: gordon, category: 'Career and Business')
 
-interest3 = Interest.create(keyword: '', user_id: richard, category: 'Music')
+interest3 = Interest.create(keyword: '', user: richard, category: 'Music')
 
-interest4 = Interest.create(keyword: '', user_id: justin, category: 'Sports and Fitness')
+interest4 = Interest.create(keyword: '', user: justin, category: 'Sports and Fitness')
 
-interest5 = Interest.create(keyword: '', user_id: serena, category: 'Food and Drink')
+interest5 = Interest.create(keyword: '', user: serena, category: 'Food and Drink')
