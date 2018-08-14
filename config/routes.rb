@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :catergories
   root "users#index"
   get '/users/login', to: 'users#login'
