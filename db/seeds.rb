@@ -34,10 +34,15 @@ skill5 = Skill.create(keyword: '', user: serena, category: 'Sports and Fitness')
 
 categories = ["Health and Wellness","Outdoor and adventure", "Technology","Family","Sports and Fitness", "Academia","Photography","Food and Drink", "Writing", "Language and Culture","Music","Movements","LGBTQ","Film","Sci-fi and games","Beliefs","Arts","Pets","Hobbies and crafts","Fashion and Beauty","Career and Business","Industry and Trades"]
 
+urls = []
+
 categories.each do |category|
-c = Category.new
-c.name = category
-c.save
+    c = Category.new
+    c.name = category
+    urls.each do |url|
+        c.url = url
+    end
+    c.save
 end
 
 

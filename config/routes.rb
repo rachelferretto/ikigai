@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :catergories
+  resources :categories
   root "users#index"
   get '/users/login', to: 'users#login'
   resources :requests

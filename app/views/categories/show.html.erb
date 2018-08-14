@@ -1,0 +1,10 @@
+<h1><%= @category.name %> </h1>
+<% @category.users.each do |user| %>
+
+<div class= "user-list">
+    <h2><%= user.firstname%><%= user.lastname%> </h2>
+    <p><%= user.rating %>
+
+</div>
+
+<% end %>
