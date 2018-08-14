@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_08_14_020959) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
   create_table "categories", force: :cascade do |t|
     t.text "name"
     t.string "image_url"
@@ -67,4 +68,5 @@ ActiveRecord::Schema.define(version: 2018_08_14_020959) do
   add_foreign_key "interests", "users"
   add_foreign_key "requests", "users"
   add_foreign_key "skills", "users"
+
 end
