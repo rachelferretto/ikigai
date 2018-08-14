@@ -3,8 +3,9 @@
 
 <div class= "user-list">
     <h2><%= user.firstname%><%= user.lastname%> </h2>
-    <p><%= user.rating %>
-
+    <%= image_tag user.profile_url %>
+    <p> user rating </p>
+    
 </div>
 
 <% end %>
