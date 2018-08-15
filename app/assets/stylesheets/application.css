@@ -25,6 +25,10 @@
    color: white;
  }
 
+ h1, h2, h3, h4 {
+   color: white;
+ }
+
  .main {
    margin: 0 auto;
    background-image: url("/mt_fuji.jpeg");
@@ -228,4 +232,4 @@ a{
    justify-content: space-between;
    align-items: center;
  }
-l
+
