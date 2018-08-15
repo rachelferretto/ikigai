@@ -23,7 +23,7 @@ richard = User.create(firstname:'Richard', lastname: 'Branson', email: 'rb@email
 
 justin = User.create(firstname:'Justin', lastname: 'Bieber',  password: 'pudding', email: 'jb@email.com', profile_url: 'https://cdn.idntimes.com/content-images/community/2018/03/justin-bieber-2016-press-pic-supplied-3e0fdbbc05b2f7826b2cdf585068631c_600x400.jpg', zip_code: 3001, bio: '')
 
-serena = User.create(firstname:'Serena', lastname: 'Williams', email: 'serena@email.com', password: 'pudding', profile_url: 'https://media.glamour.com/photos/5b71a0895caff06c9f00aeec/master/w_644,c_limit/serena-williams-lede.jpg', zip_code: 3070, bio: '')
+serena = User.create(firstname:'Serena', lastname: 'Williams', email: 'serena@email.com', password: 'pudding', profile_url: 'https://media.glamour.com/photos/5b71a0895caff06c9f00aeec/master/w_644,c_limit/serena-williams-lede.jpg', zip_code: 3070, bio: 'Serena Williams is an American professional tennis player. The Womens Tennis Association ranked her world No. 1 in singles on eight separate occasions between 2002 and 2017.')
 
 darth = User.create(firstname: 'Darth', lastname: 'Vader', email: 'darth@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg', zip_code: 3000, bio: 'Before he became a disciple of the dark side, Darth Vader was Anakin Skywalker, a goodhearted Jedi and hero of the Clone Wars. While he was considered one of the most powerful Jedi in the galaxy, Anakin had broken the Orders code by secretly marrying Senator Padmé Amidala.' )
 
