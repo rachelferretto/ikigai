@@ -33,4 +33,20 @@ class RequestsController < ApplicationController
         end
     end
 
+    def update
+        request = Request.find(params[:id])
+        request.request_status = params[:commit]
+        request.save
+
+        redirect_to current_user
+    end
+
+    def destroy
+        request = Request.find(params[:id])
+        request.destroy
+        request.save
+
+        redirect_to current_user
+    end
+
 end
