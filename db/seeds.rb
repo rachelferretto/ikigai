@@ -11,6 +11,7 @@ Interest.destroy_all
 User.destroy_all
 Category.destroy_all
 
+
 oprah = User.create(firstname:'Oprah', lastname: 'Winfrey', email: 'oprah@email.com', password: 'pudding', profile_url: 'http://www.osul.com.br/wp-content/uploads/2015/08/Oprah21.jpg', zip_code: 3000, bio: 'Influential talk show host, author, philanthropist, actress and media personality. Oprah Winfrey has played a key role in modern American life, shaping cultural trends and promoting various liberal causes. Through her talk shows and books, she has focused on many issues facing American women.')
 
 gordon = User.create(firstname:'Gordon', lastname: 'Ramsay', email: 'gordon@email.com',  password: 'pudding', profile_url: 'https://img.delicious.com.au/kCgYvrrB/h506-w759-cfill/del/2017/06/gordon-ramsay-47340-2.jpg', zip_code: 3000, bio: 'British chef, restaurateur, and television personality. Born in Scotland, Ramsay grew up in Stratford-upon-Avon. His restaurants have been awarded 16 Michelin stars in total.')
@@ -41,7 +42,7 @@ skill5 = Skill.create(keyword: '', user: serena, category: 'Sports and Fitness')
 
 skill6 = Skill.create(keyword: '', user: darth, category:'Sci-fi and games')
 
-skill6 = Skill.create(keyword: '', user: oprah, category:'Movements')
+skill7 = Skill.create(keyword: '', user: oprah, category:'Movements')
 
 
 categories = ["Health and Wellness","Outdoor and adventure", "Technology","Family","Sports and Fitness", "Academia","Photography","Food and Drink", "Writing", "Language and Culture","Music","Movements","LGBTQ","Film","Sci-fi and games","Beliefs","Arts","Pets","Hobbies and crafts","Fashion and Beauty","Career and Business","Industry and Trades"]
