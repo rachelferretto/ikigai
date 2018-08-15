@@ -8,7 +8,6 @@ module UsersHelper
     !!current_user #user object or nil
   end
 
-
 end
 
 

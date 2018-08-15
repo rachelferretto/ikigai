@@ -6,9 +6,17 @@
 <% end %>
 
 <%= form_for(@request) do |f| %>
-    <%= f.label :category %>
-    <%= f.text_field :category %>
     
+    <%if @mentor_id %>
+        <input type="hidden" name="mentor_id" value="<%= @mentor_id%>">
+
+    <%else%>
+        <select name="category">
+        <% @categories.each do |c| %>
+            <option value="<%= c.name%>"><%= c.name%></option>
+        <%end%>
+        </select>
+    <% end %>
     <%= f.label :title %>
     <%= f.text_field :title %>
 
