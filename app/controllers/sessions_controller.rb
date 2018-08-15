@@ -2,13 +2,13 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def current_user
-    if @current_user.nil?
-      @current_user = User.find_by(id: session[:user_id])
-    else
-      @current_user
-    end
-  end
+  # def current_user
+  #   if @current_user.nil?
+  #     @current_user = User.find_by(id: session[:user_id])
+  #   else
+  #     @current_user
+  #   end
+  # end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -16,9 +16,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user
     else
-      flash
       flash[:notice] = 'Invalid email/password combination'
-      redirect_to '/login'
+      redirect_to '/sessions/new'
     end
   end
 

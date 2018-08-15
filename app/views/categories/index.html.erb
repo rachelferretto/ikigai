@@ -6,9 +6,27 @@
  -->
 
 <nav>
+    <% if logged_in? %>
+    <span class="current_user">Hi, <%= current_user.firstname %></span>
+
+    <% if %>
+      <i class="alert far fa-envelope"></i>
+    <% end %>
+
+    <a href="/users/<%= current_user.id %>">
+      <span class="login">dashboard</span>
+    </a>
+
+    <a href="">
+      <span class="login">logout</span>
+    </a>
+
+    <% else %>
     <a href="/sessions/new">
       <span class="login">login</span>
     </a>
+
+    <% end %>
 </nav>
 
 <!-- main grid container -->
@@ -40,16 +58,24 @@
 
   <div class="icon_cards">
 
-    <div class="icon_card hockey">
-      <span>Sports</span>
+    <% @categories.each do |category| %>
+
+    <a href="/categories/<%= category.id %>">
+    <div class="icon_card" style="background: url(<%= category.image_url %>); background-size: cover">
+      <span><%= category.name %></span>
     </div>
+    </a>
+
+    <% end %>
 
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <span>About Ikigai</span>
+  <a href="">
+    <span>About Ikigai</span>
+  </a>
 
   <span>Footer Stuff &copy;</span>
 </footer>
