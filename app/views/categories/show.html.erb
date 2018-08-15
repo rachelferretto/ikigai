@@ -1,11 +1,13 @@
 <h1><%= @category.name %> Mentors</h1>
-<% @skills.each do |skill| %>
+<div>
+    <% @skills.each do |skill| %>
 
-<div class= "user-list">
-    <h2><%= skill.user.firstname%><%= skill.user.lastname%> </h2>
-    <%= image_tag user.profile_url %>
-    <p> user rating  </p>
-    
+    <div class= "user-profile">
+        <h2><%= skill.user.firstname%><%= skill.user.lastname%> </h2>
+        <p> user rating  </p>
+        <%= image_tag skill.user.profile_url %>
+        <p> Bio <%=skill.user.bio %></p>
+    </div>
+
+    <% end %>
 </div>
-
-<% end %>
