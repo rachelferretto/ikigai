@@ -6,7 +6,10 @@ class CategoriesController < ApplicationController
 
     def show
         @category = Category.find(params[:id])
-        @users = User.all
+        @skill = @category.name
+        # @users = User.where()
+        @skills = Skill.where(category: @skill)
+   
     end
 
 end
