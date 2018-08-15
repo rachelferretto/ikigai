@@ -26,7 +26,7 @@
 
  .main {
    margin: 0 auto;
-   background-image: url("mt_fuji.jpeg");
+   background-image: url("/mt_fuji.jpeg");
    background-size: cover;
    height: 600px;
    display: grid;
@@ -68,9 +68,9 @@
  .tagline {
    display: flex;
    justify-content: flex-start;
-   align-items: center;
+   align-items: flex-start;
    flex-direction: column;
-   text-align: center;
+   text-align: left;
    grid-area: tagline;
    margin: 50px;
    padding: 50px;
@@ -85,7 +85,7 @@
  .mission {
    font-size: 125%;
    font-family: 'Josefin Sans', sans-serif;
-   margin: 15px;
+   margin: 10px 0px 10px 0px;
  }
 
  .signup {
@@ -102,7 +102,7 @@
    padding: 10px;
  }
 
- .signup a{
+a{
    text-decoration: none;
    color: white;
  }
@@ -178,6 +178,7 @@
  }
 
  .icon_card span {
+   padding: 10px;
    border-radius: 5px;
    display: flex;
    justify-content: center;
@@ -199,7 +200,6 @@
  /* Example of background with image url, add as style to icon card */
  .hockey {
    background: url("https://images.unsplash.com/photo-1486128105845-91daff43f404?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6fc152249a2049ce4f0ecb1257b20e5e&auto=format&fit=crop&w=2850&q=80");
-   background-size: cover;
  }
 
  footer {
@@ -213,3 +213,4 @@
    justify-content: space-between;
    align-items: center;
  }
+l

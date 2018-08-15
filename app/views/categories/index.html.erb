@@ -40,9 +40,15 @@
 
   <div class="icon_cards">
 
-    <div class="icon_card hockey">
-      <span>Sports</span>
+    <% @categories.each do |category| %>
+
+    <a href="/categories/<%= category.id %>">
+    <div class="icon_card" style="background: url(<%= category.image_url %>); background-size: cover">
+      <span><%= category.name %></span>
     </div>
+    </a>
+
+    <% end %>
 
   </div>
 </div>
