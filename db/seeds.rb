@@ -28,6 +28,11 @@ darth = User.create(firstname: 'Darth', lastname: 'Vader', email: 'darth@email.c
 
 darth = User.create(firstname: 'Darth', lastname: 'Vader', email: 'darth@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg', zip_code: 3000, bio: 'Before he became a disciple of the dark side, Darth Vader was Anakin Skywalker, a goodhearted Jedi and hero of the Clone Wars. While he was considered one of the most powerful Jedi in the galaxy, Anakin had broken the Orders code by secretly marrying Senator Padmé Amidala.' )
 
+christian = User.create(firstname: 'Christian', lastname: 'Ronaldo', email: 'christian@email.com', password: 'pudding', profile_url: 'https://specials-images.forbesimg.com/imageserve/5b1480ae4bbe6f74868b74b5/416x416.jpg?background=000000&cropX1=451&cropX2=2982&cropY1=143&cropY2=2675', zip_code: 3002, bio: 'Cristiano Ronaldo is a Portuguese professional footballer who plays as a forward for Italian club Juventus and the Portugal national team.' )
+
+bill = User.create(firstname: 'Bill', lastname: 'Gates', email: 'bill@email.com', password: 'pudding', profile_url: 'http://www.gstatic.com/tv/thumb/persons/614/614_v9_ba.jpg', zip_code: 3003, bio: 'William Gates is an American business magnate, investor, author, philanthropist, humanitarian, and principal founder of Microsoft Corporation')
+
+lebron = User.create(firstname: 'Lebron', lastname: 'James', email: 'lebron@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lebron_wizards_2017_%28cropped%29.jpg/480px-Lebron_wizards_2017_%28cropped%29.jpg', zip_code: 3004, bio: '' )
 
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
@@ -43,6 +48,10 @@ skill5 = Skill.create(keyword: '', user: serena, category: 'Sports and Fitness')
 skill6 = Skill.create(keyword: '', user: darth, category:'Sci-fi and games')
 
 skill7 = Skill.create(keyword: '', user: oprah, category:'Movements')
+
+skill8 = Skill.create(keyword: '', user: christian, category:'Sports and Fitness')
+
+skill9 = Skill.create(keyword: '', user: bill, category:'Technology')
 
 
 categories = ["Health and Wellness","Outdoor and adventure", "Technology","Family","Sports and Fitness", "Academia","Photography","Food and Drink", "Writing", "Language and Culture","Music","Movements","LGBTQ","Film","Sci-fi and games","Beliefs","Arts","Pets","Hobbies and crafts","Fashion and Beauty","Career and Business","Industry and Trades"]
