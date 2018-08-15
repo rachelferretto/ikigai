@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2018_08_14_051900) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "catergories", force: :cascade do |t|
+    t.text "url"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "interests", force: :cascade do |t|
     t.text "keyword"
     t.bigint "user_id"

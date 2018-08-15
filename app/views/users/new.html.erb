@@ -25,3 +25,11 @@
 
     <%= f.submit "Create my account" %>
 <% end %>
+
+<p>choose from your skills</p>
+
+<select multiple>
+    <% @categories.each do |c| %>
+        <option value="<%= c %>"><%= c.name %></option>
+    <%end%>
+</select>
