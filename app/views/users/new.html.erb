@@ -22,15 +22,20 @@
 
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
-
+    
     <%= f.submit "Create my account" %>
+
 <% end %>
 
-<p>choose from your skills</p>
-
-<form action="c"></form>
-<select multiple>
+<form action="">Would you like to mentor someone?
     <% @categories.each do |c| %>
-        <option value="<%= c %>"><%= c.name %></option>
+        <input type="checkbox" name="c<%= c.id %>" value="<%= c.name %>"><%= c.name %>
     <%end%>
-</select>
+    <button>yes, let me be the mentor</button>
+</form>
+
+
+
+
+
+

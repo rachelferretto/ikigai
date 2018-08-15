@@ -13,3 +13,203 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   box-sizing: border-box;
+ }
+
+ body {
+   margin: 0;
+   font-family: 'Josefin Sans', sans-serif;
+   background-color: #212121;
+ }
+
+ .main {
+   margin: 0 auto;
+   background-image: url("mt_fuji.jpeg");
+   background-size: cover;
+   height: 600px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr;
+   grid-gap: 1px 1px;
+   grid-template-areas: "tagline tagline . . ." "tagline tagline . . ." ". . . logo logo" ". . . logo logo";
+ }
+
+ .logo_container {
+   grid-area: logo;
+   display: flex;
+   align-items: flex-end;
+   justify-content: flex-end;
+ }
+
+ .logo {
+   color: white;
+   height: 150px;
+   min-width: 350px;
+   margin: 25px;
+   border-bottom: 15px solid #6d2835;
+   border-right: 15px solid #e8dcdc;
+   font-size: 300%;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: .3s ease all;
+   background-color: rgba(255,255,255,.3);
+   border-radius: 10px;
+ }
+
+ .logo:hover {
+   border-bottom: 15px solid #e8dcdc;
+   border-right: 15px solid #6d2835;
+ }
+
+ .tagline {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+   grid-area: tagline;
+   margin: 50px;
+   padding: 50px;
+   width: 450px;
+ }
+
+ .tag {
+   font-size: 200%;
+   font-weight: bold;
+ }
+
+ .mission {
+   font-size: 125%;
+   font-family: 'Josefin Sans', sans-serif;
+   margin: 15px;
+ }
+
+ .signup {
+   color: white;
+   border: none;
+   background-color: rgba(255,255,255,.3);
+   border-radius: 5px;
+   border-left: 5px solid #6d2835;
+   border-bottom: 5px solid #e8dcdc;
+   font-size: 125%;
+   font-family: 'Josefin Sans', sans-serif;
+   font-weight: bold;
+   transition: .3s ease all;
+   padding: 10px;
+ }
+
+ .signup a{
+   text-decoration: none;
+   color: white;
+ }
+
+ .signup:hover {
+   border-left: 5px solid #e8dcdc;
+   border-bottom: 5px solid #6d2835;
+ }
+
+ .signup:focus {
+   outline: none;
+   border-left: 5px solid #e8dcdc;
+   border-bottom: 5px solid #6d2835;
+ }
+
+ nav {
+   margin: 0 auto;
+   background-color: #212121;
+   height: 50px;
+   width: 100vw;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   align-items: center;
+   padding: 5px 20px 0px 20px;
+ }
+
+ .login {
+   color: white;
+   padding: 5px;
+   border-top: 5px solid #e8dcdc;
+   border-right: 5px solid #6d2835;
+   transition: .3s ease all;
+   background-color: rgba(255,255,255,.3);
+   border-radius: 5px;
+ }
+
+ .login:hover {
+   color: white;
+   padding: 5px;
+   border-top: 5px solid #6d2835;
+   border-right: 5px solid #e8dcdc;
+ }
+
+ .explore {
+   color: black;
+   padding: 15px;
+   margin: 0px auto;
+   width: 100vw;
+   background-color: #e8dcdc;
+ }
+
+ .explore h2 {
+   font-size: 300%;
+ }
+
+ .icon_cards {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+ }
+
+ .icon_card {
+   border-radius: 5px;
+   color: black;
+   width: 250px;
+   height: 150px;
+   background-color: #495057;
+   margin: 25px;
+   text-align: center;
+ }
+
+ .icon_card span {
+   border-radius: 5px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   color: white;
+   font-size: 150%;
+   height: 150px;
+   width: 250px;
+   background-color: rgba(0,0,0,.6);
+   transition: .3s ease all;
+ }
+
+ .icon_card span:hover {
+   color: black;
+   background-color: rgba(255,255,255,.6);
+ }
+
+ /* Example of background with image url, add as style to icon card */
+ .hockey {
+   background: url("https://images.unsplash.com/photo-1486128105845-91daff43f404?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6fc152249a2049ce4f0ecb1257b20e5e&auto=format&fit=crop&w=2850&q=80");
+   background-size: cover;
+ }
+
+ footer {
+   background-color: #212121;
+   height: 50px;
+   width: 100vw;
+   color: white;
+   padding: 25px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+ }

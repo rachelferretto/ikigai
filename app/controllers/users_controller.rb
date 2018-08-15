@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     
     def create
         @user = User.new(user_params)
+        @categories = Category.all
         if @user.email_taken?
             flash[:notice] = ["email already exists"]
             render 'new'
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
             render 'new'
         else 
             @user.save
+            
             flash[:success] = "Welcome to the Sample App!"
             redirect_to @user
         end
