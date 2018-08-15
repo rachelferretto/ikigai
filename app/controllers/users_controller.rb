@@ -19,10 +19,22 @@ class UsersController < ApplicationController
         end
         # add flash[:success] to user/id/show page after!!!
     end
+
+    def show
+        #@user = User.current(params[:id])
+        @user = User.find(params[:id])
+        #Interest.find_by(user_id:1).category
+        @interest = Interest.find_by(user_id:(params[:id]))
+        render :show
+    end
     
     private
 
     def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+
+
+
+
 end
