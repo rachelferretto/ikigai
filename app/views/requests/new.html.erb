@@ -1,0 +1,21 @@
+<h1>new request</h1> 
+
+<% if flash[:notice] %>
+    <h3>-- show error if has any-----</h3>
+    <%= flash[:notice] %>
+<% end %>
+
+<%= form_for(@request) do |f| %>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+    
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :message %>
+    <%= f.text_field :request_message %>
+
+
+
+    <%= f.submit "send request"%>
+<% end %>
