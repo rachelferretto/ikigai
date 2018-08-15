@@ -25,6 +25,9 @@ darth = User.create(firstname: 'Darth', lastname: 'Vader', email: 'darth@email.c
 
 
 
+darth = User.create(firstname: 'Darth', lastname: 'Vader', email: 'darth@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg', zip_code: 3000, bio: 'Before he became a disciple of the dark side, Darth Vader was Anakin Skywalker, a goodhearted Jedi and hero of the Clone Wars. While he was considered one of the most powerful Jedi in the galaxy, Anakin had broken the Orders code by secretly marrying Senator Padmé Amidala.' )
+
+
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
 

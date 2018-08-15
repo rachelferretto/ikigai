@@ -7,6 +7,7 @@ module UsersHelper
     # double negation for current_user to boolean vs. if then true and false
     !!current_user #user object or nil
   end
+
 end
 
 

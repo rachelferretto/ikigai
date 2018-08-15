@@ -22,14 +22,22 @@
 
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
+    
+
+
+
+    <% @categories.each do |c| %>
+        <%= c.name%>
+        <%= check_box_tag "skills[]",c.name%>
+
+    <%end%>
 
     <%= f.submit "Create my account" %>
+
 <% end %>
 
-<p>choose from your skills</p>
 
-<select multiple>
-    <% @categories.each do |c| %>
-        <option value="<%= c %>"><%= c.name %></option>
-    <%end%>
-</select>
+
+
+
+
