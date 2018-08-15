@@ -1,4 +1,8 @@
-<h1>new request</h1> 
+<%if @mentor_id %>
+    <p>send request to <%= @mentor.firstname%></p>
+<% else %>
+    <h1>new request</h1> 
+<%end%>
 
 <% if flash[:notice] %>
     <h3>-- show error if has any-----</h3>
@@ -12,9 +16,9 @@
 
     <%else%>
         <select name="category">
-        <% @categories.each do |c| %>
-            <option value="<%= c.name%>"><%= c.name%></option>
-        <%end%>
+            <% @categories.each do |c| %>
+                <option value="<%= c.name%>"><%= c.name%></option>
+            <%end%>
         </select>
     <% end %>
     <%= f.label :title %>
@@ -22,8 +26,6 @@
 
     <%= f.label :message %>
     <%= f.text_field :request_message %>
-
-
 
     <%= f.submit "send request"%>
 <% end %>

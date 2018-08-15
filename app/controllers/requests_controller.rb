@@ -4,6 +4,7 @@ class RequestsController < ApplicationController
         @request = Request.new
         if params[:id]
             @mentor_id = params[:id]
+            @mentor = User.find(@mentor_id)
         else 
             @mentor_id = false
         end
