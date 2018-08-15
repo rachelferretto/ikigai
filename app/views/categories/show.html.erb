@@ -7,6 +7,9 @@
         <p> user rating  </p>
         <%= image_tag skill.user.profile_url %>
         <p> Bio <%=skill.user.bio %></p>
+        <form action="/requests/new/<%= skill.user.id%>" method="get">
+            <button>Request Mentor </button>
+        </form>
     </div>
 
     <% end %>
