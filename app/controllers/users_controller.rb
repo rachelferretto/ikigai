@@ -38,6 +38,20 @@ class UsersController < ApplicationController
 
 
     def show
+        #current_user.skill = request.category
+
+        #listing of requests with users that match skill of current_user
+
+        #@category = current_user.skills
+        #@skill = @category.name
+        @category=current_user.skills[0].category
+        @category="Food and Drink"
+        @requests = Request.where(category: @category, request_status: "open")
+
+        #@category = Category.find(params[:id])
+        #@skill = @category.name
+        # @users = User.where()
+        #@skills = Skill.where(category: @skill)
         #@user = User.current(params[:id])
         #@users = helpers.current_user
         #@user = User.find(params[:id])

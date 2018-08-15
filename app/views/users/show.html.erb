@@ -1,73 +1,119 @@
 <%# route: /users/:id %>
-<h1>MENTOR DASHBOARD FOR CURRENT USER</h1>
-<a href="/users/1/edit">edit profile</a>
-<a href="/requests/1/edit">edit request</a>
-
-<form action="/users/<%= current_user.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="delete">
-  <button>delete</button>
-</form>
-
-<table>
-  <tr>
-    <th>PRIVATE REQUEST</th>
-    <th>POSSIBLE MENTEE</th>
-    <th>ACTION</th>
-  </tr>
-  <tr>
-    <td> <%= Request.first.user.firstname %> </td>
-    <td>MentorID Skill=Interest</td>
-    <td>name of mentee match</td>
-    <td><button>Accept</button><button>Decline</button></td>
-  </tr>
-  <tr>
-  <td><%= current_user.firstname %></td>
-  <td><%= current_user.lastname %></td>
-  <td><button>Accept</button><button>Decline</button></td>
-
-  </tr>
-  </table>
+<div class="main_dashboard">
+  <h1>MAIN DASHBOARD FOR <%=current_user.firstname%> <%=current_user.lastname%></h1>
   </br>
+
+</div>
+
+<div class="mentor_requests">
+  <h1><%=current_user.firstname%> <%=current_user.lastname%> will you be my Mentor?</h1>
   </br>
-  <table>
+  <h2> REQUESTS TO ACTION </h2>
+  <table align="left">
     <tr>
-    <th>BROADCAST REQUEST</th>
-    <th>POSSIBLE MENTEE</th>
-    <th>ACTION</th>
+      <th align="center">REQUEST_ID</th>
+      <th align="center">STATUS</th>
+      <th align="left">CATEGORY</th>
+      <th align="left">TITLE</th>
+      <th align="left">MESSAGE</th>
+      <th align="center">ACTION</th>
     </tr>
-  <tr>
-    <td>No MentorID Skill=Interest</td>
-    <td>name of mentee match</td>
-    <td><button>Accept</button><button>Decline</button></td>
-  </tr>
+    <tr>
+      <td align="center"><%=current_user.requests[0].id%></td>
+      <td><%=current_user.requests[0].request_status%></td>
 
-</table>
+      <td align="left"><%=current_user.requests[0].category%></td>
 
-<p><%= current_user.firstname %></p>
-<a href="/user/<%= current_user.id %>/edit">edit</a>
+      <td align="left"><%=current_user.requests[0].title%></td>
+      <td align="left"><%=current_user.requests[0].request_message%></td>
+      <td> <button>ACCEPT REQUEST</button><button>DECLINE REQUEST</button></td>
+    </tr>
+    </table>
 
-<h1>MENTEE DASHBOARD FOR CURRENT USER</h1>
+  <table>
+      <tr>
+        <th align="center">REQUEST_ID</th>
+        <th align="center">STATUS</th>
+        <th align="left">CATEGORY</th>
+        <th align="left">TITLE</th>
+        <th align="left">MESSAGE</th>
+        <th align="center">ACTION</th>
+      </tr>
+      <tr>
+        <td align="center"><%=current_user.requests[0].id%></td>
+        <td><%=current_user.requests[0].request_status%></td>
 
-<table>
-  <tr>
-    <th>PRIVATE REQUEST</th>
-    <th>POSSIBLE MENTOR</th>
-    <th>STATUS</th>
-    <th>INITIATE COMMUNICATION</th>
-  </tr>
-  <tr>
-    <td>MentorID Skill=Interest</td>
-    <td>name of mentor match</td>
-    <td>Accepted/Declined</td>
-    <td><button>Click to e-mail your Mentor</button></td>
-  </tr>
-  <tr>
-    <td><%current_user.firstname%></td>
-    <td><%=current_user.lastname%></td>
-    <td>Accepted/Declined</td>
-    <td><button>Click to e-mail your Mentor</button></td>
+        <td align="left"><%=current_user.requests[0].category%></td>
+
+        <td align="left"><%=current_user.requests[0].title%></td>
+        <td align="left"><%=current_user.requests[0].request_message%></td>
+        <td> <button>ACCEPT REQUEST</button><button>DECLINE REQUEST</button></td>
+      </tr>
+    </table>
+</div>
+
+</br>
+</br>
+</br>
 
 
-  </tr>
-  </table>
+<div class="mentee_requests">
+  <h1><%=current_user.firstname%> <%=current_user.lastname%> would like a Mentor:</h1>
+
+  <table align="left">
+    <tr>
+      <th align="center">REQUEST_ID</th>
+      <th align="center">STATUS</th>
+      <th align="left">CATEGORY</th>
+      <th align="left">TITLE</th>
+      <th align="left">MESSAGE</th>
+      <th align="center">ACTION</th>
+    </tr>
+    <tr>
+      <td align="center"><%= current_user.requests[0].id %></td>
+      <td><%= current_user.requests[0].request_status %></td>
+
+      <td align="left"><%= current_user.requests[0].category %></td>
+      <td align="left"><%= current_user.requests[0].title %></td>
+      <td align><%= current_user.requests[0].request_message %></td>
+      <td> 
+        <button>EDIT REQUEST</button>
+        <button>DELETE REQUEST</button>
+        <button>Click to e-mail your Mentor</button>
+      </td>
+    </tr>
+    </table>
+  </div>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+<div class="assigned_mentors">
+  <h1> </h1>
+  <h1>Assigned Mentors for: <%=current_user.firstname%> <%=current_user.lastname%></h1>
+
+  <table align="left">
+    <tr>
+      <th align="center">REQUEST_ID</th>
+      <th align="center">STATUS</th>
+      <th align="left">CATEGORY</th>
+      <th align="left">TITLE</th>
+      <th align="left">MESSAGE</th>
+      <th align="center">ACTION</th>
+    </tr>
+    <tr>
+      <td align="center"><%=current_user.requests[0].id%></td>
+      <td><%=current_user.requests[0].request_status%></td>
+
+      <td align="left"><%=current_user.requests[0].category%></td>
+
+      <td align="left"><%=current_user.requests[0].title%></td>
+      <td align="left"><%=current_user.requests[0].request_message%></td>
+      <td> <button>Click to e-mail you Mentor</button><button>Rate Your Experience: Click to Conclude Mentoring Relationship</button></td>
+    </tr>
+    </table>
+</div>
+  
+
