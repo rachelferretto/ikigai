@@ -11,11 +11,8 @@ Interest.destroy_all
 User.destroy_all
 Category.destroy_all
 
-<<<<<<< HEAD
-oprah = User.create(firstname:'Oprah', lastname: 'Winfrey', email: 'oprah@email.com', password: 'pudding', profile_url: 'https://www.psychologies.co.uk/sites/default/files/styles/psy2_page_header/public/field/image/RGB-h_02329678%20Oprah%20Winfrey.jpg', zip_code: 3000, bio: 'Influential talk show host, author, philanthropist, actress and media personality. Oprah Winfrey has played a key role in modern American life, shaping cultural trends and promoting various liberal causes. Through her talk shows and books, she has focused on many issues facing American women.')
-=======
+
 oprah = User.create(firstname:'Oprah', lastname: 'Winfrey', email: 'oprah@email.com', password: 'pudding', profile_url: 'http://www.osul.com.br/wp-content/uploads/2015/08/Oprah21.jpg', zip_code: 3000, bio: 'Influential talk show host, author, philanthropist, actress and media personality. Oprah Winfrey has played a key role in modern American life, shaping cultural trends and promoting various liberal causes. Through her talk shows and books, she has focused on many issues facing American women.')
->>>>>>> master
 
 gordon = User.create(firstname:'Gordon', lastname: 'Ramsay', email: 'gordon@email.com',  password: 'pudding', profile_url: 'https://img.delicious.com.au/kCgYvrrB/h506-w759-cfill/del/2017/06/gordon-ramsay-47340-2.jpg', zip_code: 3000, bio: 'British chef, restaurateur, and television personality. Born in Scotland, Ramsay grew up in Stratford-upon-Avon. His restaurants have been awarded 16 Michelin stars in total.')
 
@@ -23,7 +20,7 @@ richard = User.create(firstname:'Richard', lastname: 'Branson', email: 'rb@email
 
 justin = User.create(firstname:'Justin', lastname: 'Bieber',  password: 'pudding', email: 'jb@email.com', profile_url: 'https://cdn.idntimes.com/content-images/community/2018/03/justin-bieber-2016-press-pic-supplied-3e0fdbbc05b2f7826b2cdf585068631c_600x400.jpg', zip_code: 3001, bio: '')
 
-serena = User.create(firstname:'Serena', lastname: 'Williams', email: 'serena@email.com', password: 'pudding', profile_url: 'https://media.glamour.com/photos/5b71a0895caff06c9f00aeec/master/w_644,c_limit/serena-williams-lede.jpg', zip_code: 3070, bio: '')
+serena = User.create(firstname:'Serena', lastname: 'Williams', email: 'serena@email.com', password: 'pudding', profile_url: 'https://media.glamour.com/photos/5b71a0895caff06c9f00aeec/master/w_644,c_limit/serena-williams-lede.jpg', zip_code: 3070, bio: 'Serena Williams is an American professional tennis player. The Womens Tennis Association ranked her world No. 1 in singles on eight separate occasions between 2002 and 2017.')
 
 darth = User.create(firstname: 'Darth', lastname: 'Vader', email: 'darth@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg', zip_code: 3000, bio: 'Before he became a disciple of the dark side, Darth Vader was Anakin Skywalker, a goodhearted Jedi and hero of the Clone Wars. While he was considered one of the most powerful Jedi in the galaxy, Anakin had broken the Orders code by secretly marrying Senator Padmé Amidala.' )
 
@@ -31,6 +28,11 @@ darth = User.create(firstname: 'Darth', lastname: 'Vader', email: 'darth@email.c
 
 darth = User.create(firstname: 'Darth', lastname: 'Vader', email: 'darth@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg', zip_code: 3000, bio: 'Before he became a disciple of the dark side, Darth Vader was Anakin Skywalker, a goodhearted Jedi and hero of the Clone Wars. While he was considered one of the most powerful Jedi in the galaxy, Anakin had broken the Orders code by secretly marrying Senator Padmé Amidala.' )
 
+christian = User.create(firstname: 'Christian', lastname: 'Ronaldo', email: 'christian@email.com', password: 'pudding', profile_url: 'https://specials-images.forbesimg.com/imageserve/5b1480ae4bbe6f74868b74b5/416x416.jpg?background=000000&cropX1=451&cropX2=2982&cropY1=143&cropY2=2675', zip_code: 3002, bio: 'Cristiano Ronaldo is a Portuguese professional footballer who plays as a forward for Italian club Juventus and the Portugal national team.' )
+
+bill = User.create(firstname: 'Bill', lastname: 'Gates', email: 'bill@email.com', password: 'pudding', profile_url: 'http://www.gstatic.com/tv/thumb/persons/614/614_v9_ba.jpg', zip_code: 3003, bio: 'William Gates is an American business magnate, investor, author, philanthropist, humanitarian, and principal founder of Microsoft Corporation')
+
+lebron = User.create(firstname: 'Lebron', lastname: 'James', email: 'lebron@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lebron_wizards_2017_%28cropped%29.jpg/480px-Lebron_wizards_2017_%28cropped%29.jpg', zip_code: 3004, bio: '' )
 
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
@@ -45,11 +47,12 @@ skill5 = Skill.create(keyword: '', user: serena, category: 'Sports and Fitness')
 
 skill6 = Skill.create(keyword: '', user: darth, category:'Sci-fi and games')
 
-<<<<<<< HEAD
-=======
-skill6 = Skill.create(keyword: '', user: oprah, category:'Movements')
+skill7 = Skill.create(keyword: '', user: oprah, category:'Movements')
 
->>>>>>> master
+skill8 = Skill.create(keyword: '', user: christian, category:'Sports and Fitness')
+
+skill9 = Skill.create(keyword: '', user: bill, category:'Technology')
+
 
 categories = ["Health and Wellness","Outdoor and adventure", "Technology","Family","Sports and Fitness", "Academia","Photography","Food and Drink", "Writing", "Language and Culture","Music","Movements","LGBTQ","Film","Sci-fi and games","Beliefs","Arts","Pets","Hobbies and crafts","Fashion and Beauty","Career and Business","Industry and Trades"]
 
