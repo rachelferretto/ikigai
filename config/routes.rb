@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-  resources :catergories
+  resources :categories
   root "users#index"
   resources :requests
   resources :interests

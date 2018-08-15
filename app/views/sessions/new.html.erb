@@ -1,16 +1,19 @@
-<h1>Log in</h1>
+<h1>Log in</h1> 
 
-    <%= form_for(:session, url: login_path) do |f| %>
+<% if flash[:notice] %>
+    <h3>-- show error if has any-----</h3>
+    <%= flash[:notice] %>
+<% end %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email%>
+<%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password%>
+    <%= f.label :email %>
+    <%= f.email_field :email%>
 
-      <%= f.submit "Log in"%>
-    <% end %>
+    <%= f.label :password %>
+    <%= f.password_field :password%>
 
-    <p>New user? <%= link_to "Sign up now!", '../users/new' %></p>
-  </div>
-</div>
+    <%= f.submit "Log in"%>
+<% end %>
+
+<p>New user? <%= link_to "Sign up now!", '../users/new' %></p>
