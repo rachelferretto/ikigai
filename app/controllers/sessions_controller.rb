@@ -22,6 +22,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
+    #redirect to /login
+    redirect_to '/'
   end
 
   

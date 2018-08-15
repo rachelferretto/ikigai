@@ -1,32 +1,30 @@
 <%# page to show to everyone before and after login %>
 
-<!-- TO DO:
-    Update nav bar on login
-    Remove sign up button on login
- -->
-
 <nav>
-    <% if logged_in? %>
-    <span class="current_user">Hi, <%= current_user.firstname %></span>
+  <% if logged_in? %>
+  <span class="current_user">Hi, <%= current_user.firstname %></span>
 
-    <% if %>
-      <i class="alert far fa-envelope"></i>
-    <% end %>
+  <% if %>
+    <i class="alert far fa-envelope"></i>
+  <% end %>
 
-    <a href="/users/<%= current_user.id %>">
-      <span class="login">dashboard</span>
-    </a>
+  <a href="/users/<%= current_user.id %>">
 
-    <a href="">
-      <span class="login">logout</span>
-    </a>
+    <span class="login">dashboard</span>
+  </a>
 
-    <% else %>
-    <a href="/sessions/new">
-      <span class="login">login</span>
-    </a>
+  <form action="/sessions" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <button class="logout">logout</button>
+  </form>
 
-    <% end %>
+  <% else %>
+  <a href="/sessions/new">
+    <span class="login">login</span>
+  </a>
+
+  <% end %>
 </nav>
 
 <!-- main grid container -->
@@ -43,7 +41,7 @@
 
     <span class="tag">Learn something.</span>
 
-    <span class="mission">This is a mission statement. Here, we will describe the goal of Ikigai. It will be short, sweet, and inviting.</span>
+    <span class="mission"><b>Ikigai (生き甲斐)</b> <br>(n.) lit. "<i>a reason for being</i>"; 'a reason to get up in the morning,' to enjoy the meaning of life - passion, purpose, something one lives for.</span>
 
     <div class="signup">
       <a href="/users/new">Sign up &rarr;</a>

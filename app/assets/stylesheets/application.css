@@ -59,8 +59,8 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   transition: .3s ease all;
-   background-color: rgba(255,255,255,.3);
+   transition: .4s ease all;
+   background-color: rgba(255,255,255,.4);
    border-radius: 10px;
  }
 
@@ -96,14 +96,14 @@
  .signup {
    color: white;
    border: none;
-   background-color: rgba(255,255,255,.3);
+   background-color: rgba(255,255,255,.4);
    border-radius: 5px;
    border-left: 5px solid #6d2835;
    border-bottom: 5px solid #e8dcdc;
    font-size: 125%;
    font-family: 'Josefin Sans', sans-serif;
    font-weight: bold;
-   transition: .3s ease all;
+   transition: .4s ease all;
    padding: 10px;
  }
 
@@ -146,21 +146,30 @@ a{
   50% { opacity: 1 }
 }
 
- .login {
+ .login, button {
+   font-family: 'Josefin Sans', sans-serif;
+   border: none;
+   font-size: 100%;
    color: white;
    padding: 5px;
    border-top: 5px solid #e8dcdc;
    border-right: 5px solid #6d2835;
-   transition: .3s ease all;
-   background-color: rgba(255,255,255,.3);
+   transition: .4s ease all;
+   background-color: rgba(255,255,255,.4);
    border-radius: 5px;
    margin: 5px;
    margin-top: 0;
  }
 
- .login:hover {
+ .login:hover, button:hover {
    color: white;
    padding: 5px;
+   border-top: 5px solid #6d2835;
+   border-right: 5px solid #e8dcdc;
+ }
+
+ button:focus {
+   outline: none;
    border-top: 5px solid #6d2835;
    border-right: 5px solid #e8dcdc;
  }
@@ -179,6 +188,7 @@ a{
  }
 
  .explore h2 {
+   color: black;
    font-size: 300%;
  }
 
@@ -212,7 +222,7 @@ a{
    height: 150px;
    width: 250px;
    background-color: rgba(0,0,0,.6);
-   transition: .3s ease all;
+   transition: .4s ease all;
  }
 
  .icon_card span:hover {
