@@ -6,9 +6,27 @@
  -->
 
 <nav>
+    <% if logged_in? %>
+    <span class="current_user">Hi, <%= current_user.firstname %></span>
+
+    <% if %>
+      <i class="alert far fa-envelope"></i>
+    <% end %>
+
+    <a href="/users/<%= current_user.id %>">
+      <span class="login">dashboard</span>
+    </a>
+
+    <a href="">
+      <span class="login">logout</span>
+    </a>
+
+    <% else %>
     <a href="/sessions/new">
       <span class="login">login</span>
     </a>
+
+    <% end %>
 </nav>
 
 <!-- main grid container -->
@@ -55,7 +73,9 @@
 
 <!-- FOOTER -->
 <footer>
-  <span>About Ikigai</span>
+  <a href="">
+    <span>About Ikigai</span>
+  </a>
 
   <span>Footer Stuff &copy;</span>
 </footer>
