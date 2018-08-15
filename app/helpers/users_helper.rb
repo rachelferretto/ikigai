@@ -8,12 +8,6 @@ module UsersHelper
     !!current_user #user object or nil
   end
 
-  delete '/session' do
-    #delete the session
-    session[:user_id] = nil
-    #redirect to /login
-    redirect '/'
-  end
 
 end
 

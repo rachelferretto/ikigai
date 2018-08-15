@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_user == nil
   end
 
   
