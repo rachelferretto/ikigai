@@ -1,7 +1,8 @@
 <%if @mentor_id %>
-    <p>send request to <%= @mentor.firstname%></p>
+    <p>Send a direct request to <%= @mentor.firstname%> <%=@mentor.lastname%></p>
+   
 <% else %>
-    <h1>new request</h1> 
+    <h1>new request </h1> 
 <%end%>
 
 <% if flash[:notice] %>
@@ -21,11 +22,12 @@
             <%end%>
         </select>
     <% end %>
+
     <%= f.label :title %>
     <%= f.text_field :title %>
 
     <%= f.label :message %>
-    <%= f.text_area :request_message %>
-
+    <%= f.text_area :request_message %><span>From: <%= current_user.firstname %> <%= current_user.lastname %></span>
+    <br>
     <%= f.submit "send request"%>
 <% end %>
