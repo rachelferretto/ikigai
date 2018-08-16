@@ -14,8 +14,6 @@ class UsersController < ApplicationController
             flash[:notice] = ["email already exists"]
             render 'new'
         elsif @user.save == false
-
-
             flash[:notice] = @user.errors.full_messages
             render 'new'
         else
@@ -40,13 +38,13 @@ class UsersController < ApplicationController
     end
 
     def show
-        if current_user && Request.where(user: current_user) && Request.where(mentor_id: current_user.id)&& @mentor_categories 
+     
             @sent_requests = Request.where(user: current_user).current
             @received_requests =Request.where(mentor_id: current_user.id).pending
     
             @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
             
-        end
+
         
     end
 
