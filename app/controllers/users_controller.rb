@@ -3,8 +3,8 @@ class UsersController < ApplicationController
         @user = User.new
         @categories = Category.all
     end
-    
-    
+
+
     def create
         @user = User.new(user_params)
         @categories = Category.all
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
             flash[:notice] = @user.errors.full_messages
             render 'new'
-        else 
+        else
             if @skills
                 @user.save
                 @skills.each do |skill|
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
         
         @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
     end
-    
+
 
 
     def edit
