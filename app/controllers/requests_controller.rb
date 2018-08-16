@@ -21,8 +21,8 @@ class RequestsController < ApplicationController
         @request.title = params[:request][:title]
         @request.request_message = params[:request][:request_message]
         @request.request_status = 'pending'
-        
-
+        @mentor_id = params[:mentor_id].to_i
+   
         if @mentor_id
             @request.mentor_id =  @mentor_id
         else

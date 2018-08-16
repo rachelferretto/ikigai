@@ -5,11 +5,6 @@
     <h1>new request </h1> 
 <%end%>
 
-<% if flash[:notice] %>
-
-    <%= flash[:notice] %>
-<% end %>
-
 <%= form_for(@request) do |f| %>
     
     <%if @mentor_id %>

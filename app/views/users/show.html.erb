@@ -69,9 +69,10 @@
     <% @received_requests.each do |m|%>
       <% if m.hidden? ==false %>
         <p>title: <%= m.title%></p> 
-        <p>category: <%= m.category %></p>
+        <p>from : <%= User.find(m.user.id).firstname%></p>
         <p>message: <%= m.request_message%></p>
         <p>time: <%= m.created_at%></p>
+        <p>status: <%=m.request_status%></p>
 
         <%= form_for m, method: :put do |f| %>
           <%=f.submit 'accept'%>
