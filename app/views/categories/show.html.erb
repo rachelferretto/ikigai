@@ -3,7 +3,7 @@
     <% @skills.each do |skill| %>
 
     <div class= "user-profile">
-        <h2><%= skill.user.firstname%><%= skill.user.lastname%> </h2>
+        <h2><%= skill.user.firstname%> <%= skill.user.lastname%> </h2>
         <p> user rating  </p>
         <%= image_tag skill.user.profile_url %>
         <p> Mentor Bio: </p>

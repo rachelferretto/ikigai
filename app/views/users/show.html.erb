@@ -1,11 +1,12 @@
 
 <h1>Welcome, <%= current_user.firstname%> <%= current_user.lastname%></h1>
-<img src="<%= current_user.profile_url%>" alt="">
 <div><a href="/users/<%=current_user.id%>/edit">edit profile</a> |
-<a href="/">back to explore</a></div>
+<a href="/">explore new skills</a></div>
+<img src="<%= current_user.profile_url%>" alt="">
 
 
-<h2><%=current_user.firstname%>, find a Mentor!</h2>
+
+<h2><%=current_user.firstname%>, looking to be mentored? here are your current open requests:</h2>
 <br>
 <div class="container">
     <h3> Direct requests you have sent: </h3>
