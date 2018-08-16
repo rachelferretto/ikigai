@@ -4,27 +4,29 @@
     <% if logged_in? %>
     <span class="current_user">Hi, <%= current_user.firstname %></span>
 
-    <% if logo?%>
-      <i class="alert far fa-envelope"></i>
-    <% end %>
+    <div class="nav_controls">
+      <% if logo? %>
+        <i class="alert far fa-envelope"></i>
+      <% end %>
 
-    <a href="/users/<%= current_user.id %>">
+      <a href="/users/<%= current_user.id %>">
 
-      <span class="login">dashboard</span>
-    </a>
+        <span class="login">dashboard</span>
+      </a>
 
-    <form action="/sessions" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <button class="logout">logout</button>
-    </form>
+      <form action="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button class="logout">logout</button>
+      </form>
 
-    <% else %>
-    <a href="/sessions/new">
-      <span class="login">login</span>
-    </a>
+      <% else %>
+      <a href="/sessions/new">
+        <span class="login">login</span>
+      </a>
 
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
   <div class="s_logo_cont">
@@ -44,7 +46,7 @@
         <%if skill.user != current_user%>
 
         <div class= "mentor_profile">
-        
+
 
           <div class="mentor_name">
             <h2><%= skill.user.firstname%> <%= skill.user.lastname%></h2>
