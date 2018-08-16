@@ -84,6 +84,16 @@ julie = User.create(firstname: 'Julie', lastname: 'Bishop', email: 'julie@email.
   Minister Bishop was sworn in as Australias first female Foreign Minister on 18 September 2013 following four years in the role of Shadow Minister for Foreign Affairs and Trade.' )
 
 
+  tom = User.create(firstname: 'Tom', lastname: 'Waters', email: 'tom@email.com', password: 'pudding', profile_url: '/TomWaters.jpg', zip_code: 3010, bio: 'Having spent the last decade working in education and disability, I have now made the transition to web development, currently studying at General Assembly. I love learning and creating new things and Im excited to develop my skills and knowledge as a web developer.' )
+
+  meghan = User.create(firstname: 'Meghan', lastname: 'McKeough', email: 'meghan@email.com', password: 'pudding', profile_url: 'https://c1.staticflickr.com/8/7670/17126911031_7e2a4fbe83_b.jpg', zip_code: 3010, bio: 'I’m an aspiring web developer who discovered a passion for coding after working in research, publishing, broadcasting and writing. Like a true Ravenclaw I thrive on learning and seeking out information - and am excited by the idea of working in an industry where there is always something new to get excited about. 
+
+    A lover of film, I spend an hour every Monday on Triple R (102.7fm) co-hosting Zero-G and talking sci-fi, fantasy and historical (currently on hiatus, returning to the mic mid-September). I wrote film reviews and other culture content for Canberra streetpress BMA magazine for most of my twenties, and am the proud owner of a Grad Dip in Psychology.' )
+
+    leah = User.create(firstname: 'Leah', lastname: 'Eramo', email: 'leah@email.com', password: 'pudding', profile_url: 'https://pbs.twimg.com/profile_images/892239625866985472/XS5_Pq8-_400x400.jpg', zip_code: 3010, bio: 'Aspiring developer, Women in tech advocate. General adorer of all things agile. Excel Guru and self proclaimed automater of lives.' )
+
+    kate = User.create(firstname: 'Kate', lastname: 'Sy', email: 'kate@email.com', password: 'pudding', profile_url: 'https://cdn1.vectorstock.com/i/1000x1000/81/80/woman-flying-drone-vector-13758180.jpg', zip_code: 3010, bio: 'Drone Pilot and Currently combining my love for learning and creativity to pursue a career in web development. Enjoying all the challenges coding brings and building tangible products through code, whether a small function or an entire application. Bringing a unique perspective to the process, through professional experience gained in various industries.' )
+
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
 skill2 = Skill.create(keyword: '', user: gordon, category: 'Food and Drink')
@@ -115,6 +125,12 @@ skill27 = Skill.create(keyword: '', user: chris, category:'Pets')
 skill28 = Skill.create(keyword: '', user: martha, category:'Hobbies and crafts')
 skill29 = Skill.create(keyword: '', user: meghan, category:'Fashion and Beauty')
 skill30 = Skill.create(keyword: '', user: julie, category:'Industry and Trades')
+skill31 = Skill.create(keyword: '', user: tom, category:'Music')
+skill32 = Skill.create(keyword: '', user: meghan, category:'Sci-fi and games')
+skill33 = Skill.create(keyword: '', user: leah, category:'Technology')
+skill34 = Skill.create(keyword: '', user: kate, category:'Hobbies and crafts')
+
+
 
 
 
