@@ -23,7 +23,7 @@
     </div>
 </div>
 
-    <%if m.request_status == 'accepted'%>
+    <%if m.request_status == 'accept'%>
       <%= form_for m, method: :put do |f| %>
         <p>contact: <%=User.find(m.mentor_id).email%></p>
         <%=f.submit 'archived'%>
@@ -71,8 +71,8 @@
     
 
     <%= form_for m, method: :put do |f| %>
-      <%=f.submit 'accepted'%>
-      <%=f.submit 'declined'%>
+      <%=f.submit 'accept'%>
+      <%=f.submit 'decline'%>
     <%end%> 
   </div>
 
@@ -80,7 +80,7 @@
 </div>
 <br>
 <div class="container">
-  <h3> General requests based on your skills: </h3>
+  <h3> Requests you have accepted </h3>
   <div class="request">
     <% @mentor_categories.each do |c| %>
       <p>category:  <%=c%></p>
@@ -90,7 +90,7 @@
           From: <%=r.title%>
           <%=r.user.firstname%>
           <%= form_for r, method: :put do |f| %>
-            <%=f.submit 'accepted'%>
+            <%=f.submit 'accept'%>
           <%end%> 
         <%end%>
       <%end%>
