@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
 
     def new
+        if logged_in?
         @request = Request.new
         if params[:id]
             @mentor_id = params[:id]
@@ -9,7 +10,9 @@ class RequestsController < ApplicationController
             @mentor_id = false
         end
         @categories = Category.all
-        
+    else
+        redirect_to '/sessions/new'
+    end
     end
 
     def create
@@ -18,8 +21,8 @@ class RequestsController < ApplicationController
         @request.title = params[:request][:title]
         @request.request_message = params[:request][:request_message]
         @request.request_status = 'pending'
-        
-
+        @mentor_id = params[:mentor_id].to_i
+   
         if @mentor_id
             @request.mentor_id =  @mentor_id
         else
@@ -29,9 +32,11 @@ class RequestsController < ApplicationController
         if @request.save
             redirect_to categories_url
         else
-            redirect_to '/login'
+            redirect_to '/sessions/new'
         end
     end
+
+
 
     def update
         request = Request.find(params[:id])
@@ -62,6 +67,4 @@ class RequestsController < ApplicationController
     end
 
       
- 
-
 end

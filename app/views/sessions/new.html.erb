@@ -12,9 +12,8 @@
 
   <div class="login_cont">
 
-    <% if flash[:notice] %>
-        <h3>-- show error if has any-----</h3>
-        <%= flash[:notice] %>
+    <% if  flash[:notice].class == String %>
+        <%=flash[:notice]%>
     <% end %>
 
       <%= form_for(:session, url: sessions_path) do |f| %>

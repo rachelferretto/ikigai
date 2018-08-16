@@ -36,13 +36,13 @@ lebron = User.create(firstname: 'Lebron', lastname: 'James', email: 'lebron@emai
 
 george = User.create(firstname: 'George', lastname: 'Calombaris', email: 'george@email.com', password: 'pudding', profile_url: 'http://georgecalombaris.com.au/wp-content/uploads/2015/05/me-right1.jpg', zip_code: 3005, bio: 'George Calombaris is an Australian chef and restaurateur of Greek heritage. Calombaris is one of the judges of the Network Ten series MasterChef Australia.' )
 
-elon = User.create(firstname: 'Elon', lastname: 'Musk', email: 'elon@email.com', password: 'pudding', profile_url: 'https://boygeniusreport.files.wordpress.com/2017/07/1500295159151.jpg?quality=98&strip=all&w=782', zip_code: 3121, bio: 'an Australian chef and restaurateur of Greek heritage. Calombaris is one of the judges of the Network Ten series MasterChef Australia. Prior to his role on MasterChef Australia, Calombaris appeared regularly on the daytime Network Ten cooking show Ready Steady Cook. He owns several restaurants in Melbourne. His flagship restaurant, The Press Club, was awarded The Age Good Food Guide "Best New Restaurant 2008' )
+elon = User.create(firstname: 'Elon', lastname: 'Musk', email: 'elon@email.com', password: 'pudding', profile_url: 'https://boygeniusreport.files.wordpress.com/2017/07/1500295159151.jpg?quality=98&strip=all&w=782', zip_code: 3121, bio: 'Elon Reeve Musk FRS is a business magnate, investor and engineer. He is the founder, CEO, and lead designer of SpaceX; co-founder, CEO, and product architect of Tesla, Inc.; and co-founder and CEO of Neuralink.')
 
 dwayne = User.create(firstname: 'Dwayne', lastname: 'Wade', email: 'dwayne@email.com', password: 'pudding', profile_url: 'https://img.bleacherreport.net/img/images/photos/003/758/335/hi-res-7d1e79e8d4f2113408eaa9169731f3ed_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top', zip_code: 3007, bio: 'Tongs childhood hero and Dwyane Wade is a professional basketball player who last played for the Miami Heat of the National Basketball Association.' )
 
-russell = User.create(firstname: 'Russell', lastname: 'Coight', email: 'russell@email.com', password: 'pudding', profile_url: 'https://cdn.newsapi.com.au/image/v1/42cba6863020aac0a23290527360a082?width=316', zip_code: 3008, bio: 'Comedian Glen Robbins performs the role of ‘Russell Coight’ in ‘All Aussie Adventures.’ Russell Coight is a wildlife and survival expert who collects information from his disastrous travels, spread misinformation and cause accidents.' )
+russell = User.create(firstname: 'Russell', lastname: 'Coight', email: 'russell@email.com', password: 'pudding', profile_url: 'https://cdn.newsapi.com.au/image/v1/42cba6863020aac0a23290527360a082?width=316', zip_code: 3008, bio: 'Comedian Glen Robbins performs the role of Russell Coight in All Aussie Adventures. Russell Coight is a wildlife and survival expert who collects information from his disastrous travels, spread misinformation and cause accidents.' )
 
-bear = User.create(firstname: 'Bear', lastname: 'Grylls', email: 'bear@email.com', password: 'pudding', profile_url: '', zip_code: 3009, bio: 'Edward Michael Grylls, better known as Bear Grylls, is a British adventurer, writer and television presenter. He is widely known for his television series Man vs. Wild, originally titled Born Survivor: Bear Grylls for the United Kingdom release.' )
+bear = User.create(firstname: 'Bear', lastname: 'Grylls', email: 'bear@email.com', password: 'pudding', profile_url: 'https://130513-375933-1-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/09/Bear-Grylls.jpg', zip_code: 3009, bio: 'Edward Michael Grylls, better known as Bear Grylls, is a British adventurer, writer and television presenter. He is widely known for his television series Man vs. Wild, originally titled Born Survivor: Bear Grylls for the United Kingdom release.' )
 
 michelle = User.create(firstname: 'Michelle', lastname: 'Bridges', email: 'michelle@email.com', password: 'pudding', profile_url: '', zip_code: 3010, bio: 'an Australian personal trainer, author and TV personality. From 2007 to 2015, she was a trainer on the Australian version of The Biggest Loser, making her first appearance in the second season, during which she trained the red team alongside Jillian Michaels. Michelle Bridges started the online 12 Week Body Transformation 12wbt.com in 2010. The program, to date, has lost over 2,000,000 kilos from the Australian public and worldwide participants' )
 
@@ -84,6 +84,16 @@ julie = User.create(firstname: 'Julie', lastname: 'Bishop', email: 'julie@email.
   Minister Bishop was sworn in as Australias first female Foreign Minister on 18 September 2013 following four years in the role of Shadow Minister for Foreign Affairs and Trade.' )
 
 
+  tom = User.create(firstname: 'Tom', lastname: 'Waters', email: 'tom@email.com', password: 'pudding', profile_url: '/TomWaters.jpg', zip_code: 3010, bio: 'Having spent the last decade working in education and disability, I have now made the transition to web development, currently studying at General Assembly. I love learning and creating new things and Im excited to develop my skills and knowledge as a web developer.' )
+
+  meghan = User.create(firstname: 'Meghan', lastname: 'McKeough', email: 'meghan@email.com', password: 'pudding', profile_url: 'https://c1.staticflickr.com/8/7670/17126911031_7e2a4fbe83_b.jpg', zip_code: 3010, bio: 'I’m an aspiring web developer who discovered a passion for coding after working in research, publishing, broadcasting and writing. Like a true Ravenclaw I thrive on learning and seeking out information - and am excited by the idea of working in an industry where there is always something new to get excited about. 
+
+    A lover of film, I spend an hour every Monday on Triple R (102.7fm) co-hosting Zero-G and talking sci-fi, fantasy and historical (currently on hiatus, returning to the mic mid-September). I wrote film reviews and other culture content for Canberra streetpress BMA magazine for most of my twenties, and am the proud owner of a Grad Dip in Psychology.' )
+
+    leah = User.create(firstname: 'Leah', lastname: 'Eramo', email: 'leah@email.com', password: 'pudding', profile_url: 'https://pbs.twimg.com/profile_images/892239625866985472/XS5_Pq8-_400x400.jpg', zip_code: 3010, bio: 'Aspiring developer, Women in tech advocate. General adorer of all things agile. Excel Guru and self proclaimed automater of lives.' )
+
+    kate = User.create(firstname: 'Kate', lastname: 'Sy', email: 'kate@email.com', password: 'pudding', profile_url: 'https://cdn1.vectorstock.com/i/1000x1000/81/80/woman-flying-drone-vector-13758180.jpg', zip_code: 3010, bio: 'Drone Pilot and Currently combining my love for learning and creativity to pursue a career in web development. Enjoying all the challenges coding brings and building tangible products through code, whether a small function or an entire application. Bringing a unique perspective to the process, through professional experience gained in various industries.' )
+
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
 skill2 = Skill.create(keyword: '', user: gordon, category: 'Food and Drink')
@@ -115,6 +125,12 @@ skill27 = Skill.create(keyword: '', user: chris, category:'Pets')
 skill28 = Skill.create(keyword: '', user: martha, category:'Hobbies and crafts')
 skill29 = Skill.create(keyword: '', user: meghan, category:'Fashion and Beauty')
 skill30 = Skill.create(keyword: '', user: julie, category:'Industry and Trades')
+skill31 = Skill.create(keyword: '', user: tom, category:'Music')
+skill32 = Skill.create(keyword: '', user: meghan, category:'Sci-fi and games')
+skill33 = Skill.create(keyword: '', user: leah, category:'Technology')
+skill34 = Skill.create(keyword: '', user: kate, category:'Hobbies and crafts')
+
+
 
 
 
@@ -138,13 +154,13 @@ categories.each do |category|
     c.save
   end
 
-request1 = Request.create(title: 'Looking for a mentor', user: justin, request_message: 'Hi im looking for a mentor', category: 'Sci-fi and games', request_status: 'open')
+request1 = Request.create(title: 'Looking for a mentor', user: justin, request_message: 'Hi im looking for a mentor', category: 'Sci-fi and games', request_status: 'pending')
 
-request2 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Food and Drink', request_status: 'open')
+request2 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Food and Drink', request_status: 'pending')
 
-request3 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Music', request_status: 'open')
+request3 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Music', request_status: 'pending')
 
-request4 = Request.create(title: 'Looking for a mentor', user: justin, mentor_id: oprah.id,request_message: 'Hi im looking to write a book and could use a mentor', category: 'Writing', request_status: 'open')
+request4 = Request.create(title: 'Looking for a mentor', user: justin, mentor_id: oprah.id,request_message: 'Hi im looking to write a book and could use a mentor', category: 'Writing', request_status: 'pending')
 
 
 interest1 = Interest.create(keyword: '', user: oprah, category: 'Photography')
