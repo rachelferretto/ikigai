@@ -41,8 +41,10 @@
 
     <div>
         <% @skills.each do |skill| %>
+        <%if skill.user != current_user%>
 
         <div class= "mentor_profile">
+        
 
           <div class="mentor_name">
             <h2><%= skill.user.firstname%> <%= skill.user.lastname%></h2>
@@ -59,6 +61,7 @@
           </div>
 
         </div>
+        <%end%>
 
         <% end %>
     </div>
