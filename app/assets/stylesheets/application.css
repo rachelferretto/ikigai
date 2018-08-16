@@ -261,8 +261,15 @@ footer {
 
 .nav_bar {
   grid-area: nav_bar;
+  margin: 0 auto;
   background-color: #212121;
-  color: white;
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 20px 0px 20px;
 }
 
 .s_logo_cont {
@@ -384,4 +391,91 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
+}
+
+.mentors_grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 100px 1fr 1fr 50px 50px;
+  grid-gap: 1px 1px;
+  grid-template-areas: "nav_bar nav_bar nav_bar nav_bar" "logo category_title category_title ." "mentors_list mentors_list mentors_list mentors_list" "mentors_list mentors_list mentors_list mentors_list" ". . . ." "footer_bar footer_bar footer_bar footer_bar";
+  background-image: url("/mt_fuji.jpeg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.mentors_list {
+  color: black;
+  background-color: rgba(255,255,255,.4);
+  grid-area: mentors_list;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin: 25px;
+  border-bottom: 15px solid #6d2835;
+  border-right: 15px solid #e8dcdc;
+  border-radius: 10px;
+}
+
+.mentors_list h1, h2, h3, h4 {
+  color: black;
+}
+
+.category_title {
+  grid-area: category_title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mentor_profile {
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  background-color: rgba(255,255,255,.7);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.mentor_profile img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.mentor_profile button {
+  color: black;
+  background-color: rgba(255,255,255,.9);
+  border-radius: 5px;
+  border: none;
+  border-left: 5px solid #6d2835;
+  border-bottom: 5px solid #e8dcdc;
+  transition: .4s ease all;
+}
+
+.mentor_profile button:hover {
+  border: none;
+  border-left: 5px solid #e8dcdc;
+  border-bottom: 5px solid #6d2835;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6d2835;
+    border-radius: 10px;
+}
+
+.mentor_bio {
+  margin: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
