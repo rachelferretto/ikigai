@@ -3,8 +3,8 @@ class UsersController < ApplicationController
         @user = User.new
         @categories = Category.all
     end
-    
-    
+
+
     def create
         @user = User.new(user_params)
         @categories = Category.all
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
             flash[:notice] = @user.errors.full_messages
             render 'new'
-        else 
+        else
             if @skills
                 @user.save
                 @skills.each do |skill|
@@ -37,10 +37,10 @@ class UsersController < ApplicationController
     def show
         @sent_requests = Request.where(user: current_user).current
         @received_requests =Request.where(mentor_id: current_user.id).current
-        
+
         @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
     end
-    
+
 
 
     def edit
@@ -48,16 +48,17 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = current_user
-        @user.profile_url = params[:profile_url]
-        @user.firstname = params[:firstname]
-        @user.lastname = params[:lastname]
-        if @user.save
-            redirect_to "/categories"
-        else
-            render :edit
-        end
-    
+      @user = current_user
+      @user.profile_url = params[:profile_url]
+      @user.firstname = params[:firstname]
+      @user.lastname = params[:lastname]
+      if @user.save
+          redirect_to "/categories"
+      else
+          render :edit
+      end
+    end
+
     private
 
     def user_params
