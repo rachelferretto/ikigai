@@ -8,9 +8,10 @@
         <%= image_tag skill.user.profile_url %>
         <p> Mentor Bio: </p>
         <p><%=skill.user.bio %></p>
-    </div>
-        <form action= "/requests/new/<%=skill.user.id%>" method="get">
-            <button>Request Mentor</button>
+        <form action="/requests/new/<%= skill.user.id%>" method="get">
+            <button>Request Mentor </button>
+
         </form>
+    </div>
     <% end %>
 </div>

@@ -1,4 +1,7 @@
-<%# route should be /users/:id/edit %>
-
-edit your profile
-
+<%= form_for current_user do %>
+  Your picture : <input type="text" name="profile_url" value="<%= current_user.profile_url%>">  
+  First name :<input type="text" name="firstname" value="<%= current_user.firstname%>"> 
+  Last name :<input type="text" name="lastname" value="<%= current_user.lastname%>"> 
+  email :<input type="text" name="email" value="<%= current_user.email%>"> 
+  <button>update profile</button>
+<% end %>
