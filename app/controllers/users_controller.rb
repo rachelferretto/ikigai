@@ -57,13 +57,7 @@ class UsersController < ApplicationController
         else
             render :edit
         end
-<<<<<<< HEAD
-    end
-    
-
-=======
     end 
->>>>>>> 0db3c3de19ed078090fcaec1a314b9b177c9189d
 
     private
 
