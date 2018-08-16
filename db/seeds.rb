@@ -58,6 +58,11 @@ dt = User.create(firstname: 'DT', lastname: 'Tsui', email: 'dt@email.com', passw
 
 kasun = User.create(firstname: 'Kasun', lastname: 'Maldeni', email: 'kasun@email.com', password: 'pudding', profile_url: 'https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/10879/thumb_kasun.jpg', zip_code: 3010, bio: '' )
 
+annie = User.create(firstname: 'Annie', lastname: 'Leibovitz', email: 'annie@email.com', password: 'pudding', profile_url: 'https://d2jv9003bew7ag.cloudfront.net/uploads/Annie-Leibovitz-1.jpg', zip_code: 3010, bio: '' )
+
+emmanuel = User.create(firstname: 'Emmanuel', lastname: 'Macron', email: 'emmanuel@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Emmanuel_Macron_in_Tallinn_Digital_Summit._Welcome_dinner_hosted_by_HE_Donald_Tusk._Handshake_%2836669381364%29_%28cropped_2%29.jpg', zip_code: 3010, bio: '' )
+
+
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
 skill2 = Skill.create(keyword: '', user: gordon, category: 'Food and Drink')
@@ -80,6 +85,8 @@ skill18 = Skill.create(keyword: '', user: kevin, category:'Health and Wellness')
 skill19 = Skill.create(keyword: '', user: homer, category:'Family')
 skill20 = Skill.create(keyword: '', user: dt, category:'Academia')
 skill21 = Skill.create(keyword: '', user: kasun, category:'Academia')
+skill22 = Skill.create(keyword: '', user: annie, category:'Photography')
+skill23 = Skill.create(keyword: '', user: emmanuel, category:'Language and Culture')
 
 
 
