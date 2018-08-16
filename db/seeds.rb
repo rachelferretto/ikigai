@@ -33,28 +33,33 @@ bill = User.create(firstname: 'Bill', lastname: 'Gates', email: 'bill@email.com'
 
 lebron = User.create(firstname: 'Lebron', lastname: 'James', email: 'lebron@email.com', password: 'pudding', profile_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lebron_wizards_2017_%28cropped%29.jpg/480px-Lebron_wizards_2017_%28cropped%29.jpg', zip_code: 3004, bio: '' )
 
+george = User.create(firstname: 'George', lastname: 'Calombaris', email: 'george@email.com', password: 'pudding', profile_url: 'http://georgecalombaris.com.au/wp-content/uploads/2015/05/me-right1.jpg', zip_code: 3005, bio: 'George Calombaris is an Australian chef and restaurateur of Greek heritage. Calombaris is one of the judges of the Network Ten series MasterChef Australia.' )
+
+elon = User.create(firstname: 'Elon', lastname: 'Musk', email: 'elon@email.com', password: 'pudding', profile_url: 'https://boygeniusreport.files.wordpress.com/2017/07/1500295159151.jpg?quality=98&strip=all&w=782', zip_code: 3121, bio: '' )
+
+dwayne = User.create(firstname: 'Dwayne', lastname: 'Wade', email: 'dwayne@email.com', password: 'pudding', profile_url: 'https://img.bleacherreport.net/img/images/photos/003/758/335/hi-res-7d1e79e8d4f2113408eaa9169731f3ed_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top', zip_code: 3007, bio: 'Dwyane Wade is a professional basketball player who last played for the Miami Heat of the National Basketball Association.' )
+
+russell = User.create(firstname: 'Russell', lastname: 'Coight', email: 'russell@email.com', password: 'pudding', profile_url: 'https://cdn.newsapi.com.au/image/v1/42cba6863020aac0a23290527360a082?width=316', zip_code: 3008, bio: '' )
+
+bear = User.create(firstname: 'Bear', lastname: 'Grylls', email: 'bear@email.com', password: 'pudding', profile_url: '', zip_code: 3009, bio: 'Edward Michael Grylls, better known as Bear Grylls, is a British adventurer, writer and television presenter. He is widely known for his television series Man vs. Wild, originally titled Born Survivor: Bear Grylls for the United Kingdom release.' )
+
+michelle = User.create(firstname: 'Michelle', lastname: 'Bridges', email: 'michelle@email.com', password: 'pudding', profile_url: '', zip_code: 3010, bio: '' )
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
-
 skill2 = Skill.create(keyword: '', user: gordon, category: 'Food and Drink')
-
 skill3 = Skill.create(keyword: '', user: richard, category: 'Career and Business')
-
 skill4 = Skill.create(keyword: '', user: justin, category: 'Music')
-
 skill5 = Skill.create(keyword: '', user: serena, category: 'Sports and Fitness')
-
 skill6 = Skill.create(keyword: '', user: darth, category:'Sci-fi and games')
-
 skill7 = Skill.create(keyword: '', user: oprah, category:'Movements')
-
 skill8 = Skill.create(keyword: '', user: christian, category:'Sports and Fitness')
-
 skill9 = Skill.create(keyword: '', user: bill, category:'Technology')
-
-skill10 = Skill.create(keyword: '', user: , category:'')
-
-skill11 = Skill.create(keyword: '', user: , category:'')
+skill10 = Skill.create(keyword: '', user: lebron, category:'Sports and Fitness')
+skill11 = Skill.create(keyword: '', user: george, category:'Food and Drink')
+skill12 = Skill.create(keyword: '', user: elon, category:'Technology')
+skill13 = Skill.create(keyword: '', user: dwayne, category:'Sports and Fitness')
+skill14 = Skill.create(keyword: '', user: russell, category:'Outdoor and adventure')
+skill15 = Skill.create(keyword: '', user: bear, category:'Outdoor and adventure')
 
 
 categories = ["Health and Wellness","Outdoor and adventure", "Technology","Family","Sports and Fitness", "Academia","Photography","Food and Drink", "Writing", "Language and Culture","Music","Movements","LGBTQ","Film","Sci-fi and games","Beliefs","Arts","Pets","Hobbies and crafts","Fashion and Beauty","Career and Business","Industry and Trades"]
@@ -72,7 +77,7 @@ categories.each do |category|
 
 request1 = Request.create(title: 'Looking for a mentor', user: justin, request_message: 'Hi im looking for a mentor', category: 'Sci-fi and games', request_status: 'open')
 
-request1 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Food and Drink', request_status: 'open')
+request2 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Food and Drink', request_status: 'open')
 
 
 interest1 = Interest.create(keyword: '', user: oprah, category: 'Photography')
