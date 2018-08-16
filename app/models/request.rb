@@ -13,11 +13,5 @@ class Request < ApplicationRecord
     where(request_status: 'pending')
   end
 
-  # def self.hide
-  #   if hide_arry = nil
-  #     hide_arry = []
-  #   where(hide_by:)
-
-  # end
 
 end
