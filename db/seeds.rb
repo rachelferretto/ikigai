@@ -46,6 +46,13 @@ bear = User.create(firstname: 'Bear', lastname: 'Grylls', email: 'bear@email.com
 
 michelle = User.create(firstname: 'Michelle', lastname: 'Bridges', email: 'michelle@email.com', password: 'pudding', profile_url: '', zip_code: 3010, bio: '' )
 
+caitlin = User.create(firstname: 'Caitlin', lastname: 'Jenner', email: 'caitlin@email.com', password: 'pudding', profile_url: 'https://www.advocate.com/sites/advocate.com/files/2017/10/17/caitlyn-jenner-750.jpg', zip_code: 3010, bio: '' )
+
+steven = User.create(firstname: 'Steven', lastname: 'Spielberg', email: 'steven@email.com', password: 'pudding', profile_url: 'http://images.tritondigitalcms.com/6616/sites/356/2018/04/18080938/Steven-Spielberg.jpg', zip_code: 3010, bio: '' )
+
+kevin = User.create(firstname: 'Kevin', lastname: 'Hart', email: 'kevin@email.com', password: 'pudding', profile_url: 'https://assets.entrepreneur.com/content/3x2/2000/20180509212515-ent18-june-kevinhart-1.jpeg', zip_code: 3010, bio: '' )
+
+
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
 skill2 = Skill.create(keyword: '', user: gordon, category: 'Food and Drink')
 skill3 = Skill.create(keyword: '', user: richard, category: 'Career and Business')
@@ -61,6 +68,13 @@ skill12 = Skill.create(keyword: '', user: elon, category:'Technology')
 skill13 = Skill.create(keyword: '', user: dwayne, category:'Sports and Fitness')
 skill14 = Skill.create(keyword: '', user: russell, category:'Outdoor and adventure')
 skill15 = Skill.create(keyword: '', user: bear, category:'Outdoor and adventure')
+skill16 = Skill.create(keyword: '', user: caitlin, category:'LGBTQ')
+skill17 = Skill.create(keyword: '', user: steven, category:'Film')
+skill18 = Skill.create(keyword: '', user: kevin, category:'Health and Wellness')
+
+
+
+
 
 
 categories = ["Health and Wellness","Outdoor and adventure", "Technology","Family","Sports and Fitness", "Academia","Photography","Food and Drink", "Writing", "Language and Culture","Music","Movements","LGBTQ","Film","Sci-fi and games","Beliefs","Arts","Pets","Hobbies and crafts","Fashion and Beauty","Career and Business","Industry and Trades"]
@@ -79,6 +93,10 @@ categories.each do |category|
 request1 = Request.create(title: 'Looking for a mentor', user: justin, request_message: 'Hi im looking for a mentor', category: 'Sci-fi and games', request_status: 'open')
 
 request2 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Food and Drink', request_status: 'open')
+
+request3 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Music', request_status: 'open')
+
+request4 = Request.create(title: 'Looking for a mentor', user: justin, mentor_id: oprah.id,request_message: 'Hi im looking to write a book and could use a mentor', category: 'Writing', request_status: 'open')
 
 
 interest1 = Interest.create(keyword: '', user: oprah, category: 'Photography')

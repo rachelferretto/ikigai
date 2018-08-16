@@ -48,16 +48,18 @@ class UsersController < ApplicationController
     end
 
     def update
-      @user = current_user
-      @user.profile_url = params[:profile_url]
-      @user.firstname = params[:firstname]
-      @user.lastname = params[:lastname]
-      if @user.save
-          redirect_to "/categories"
-      else
-          render :edit
-      end
+        @user = current_user
+        @user.profile_url = params[:profile_url]
+        @user.firstname = params[:firstname]
+        @user.lastname = params[:lastname]
+        if @user.save
+            redirect_to "/categories"
+        else
+            render :edit
+        end
     end
+    
+
 
     private
 
