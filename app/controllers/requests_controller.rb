@@ -4,6 +4,7 @@ class RequestsController < ApplicationController
         @request = Request.new
         if params[:id]
             @mentor_id = params[:id]
+            @mentor = User.find(@mentor_id)
         else 
             @mentor_id = false
         end
@@ -30,6 +31,22 @@ class RequestsController < ApplicationController
         else
             redirect_to '/login'
         end
+    end
+
+    def update
+        request = Request.find(params[:id])
+        request.request_status = params[:commit]
+        request.save
+
+        redirect_to current_user
+    end
+
+    def destroy
+        request = Request.find(params[:id])
+        request.destroy
+        request.save
+
+        redirect_to current_user
     end
 
 end

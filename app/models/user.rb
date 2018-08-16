@@ -7,4 +7,5 @@ class User < ApplicationRecord
     def email_taken?
         self.class.exists?(:email => email)
     end
+
 end

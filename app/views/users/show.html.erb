@@ -1,119 +1,83 @@
-<%# route: /users/:id %>
-<div class="main_dashboard">
-  <h1>MAIN DASHBOARD FOR <%=current_user.firstname%> <%=current_user.lastname%></h1>
-  </br>
 
-</div>
+<p>welcome home <%= current_user.firstname%> <%= current_user.lastname%></p>
+<img src="<%= current_user.profile_url%>" alt="">
+<div><a href="/users/<%=current_user.id%>/edit">edit profile</a></div>
 
-<div class="mentor_requests">
-  <h1><%=current_user.firstname%> <%=current_user.lastname%> will you be my Mentor?</h1>
-  </br>
-  <h2> REQUESTS TO ACTION </h2>
-  <table align="left">
-    <tr>
-      <th align="center">REQUEST_ID</th>
-      <th align="center">STATUS</th>
-      <th align="left">CATEGORY</th>
-      <th align="left">TITLE</th>
-      <th align="left">MESSAGE</th>
-      <th align="center">ACTION</th>
-    </tr>
-    <tr>
-      <td align="center"><%=current_user.requests[0].id%></td>
-      <td><%=current_user.requests[0].request_status%></td>
-
-      <td align="left"><%=current_user.requests[0].category%></td>
-
-      <td align="left"><%=current_user.requests[0].title%></td>
-      <td align="left"><%=current_user.requests[0].request_message%></td>
-      <td> <button>ACCEPT REQUEST</button><button>DECLINE REQUEST</button></td>
-    </tr>
-    </table>
-
-  <table>
-      <tr>
-        <th align="center">REQUEST_ID</th>
-        <th align="center">STATUS</th>
-        <th align="left">CATEGORY</th>
-        <th align="left">TITLE</th>
-        <th align="left">MESSAGE</th>
-        <th align="center">ACTION</th>
-      </tr>
-      <tr>
-        <td align="center"><%=current_user.requests[0].id%></td>
-        <td><%=current_user.requests[0].request_status%></td>
-
-        <td align="left"><%=current_user.requests[0].category%></td>
-
-        <td align="left"><%=current_user.requests[0].title%></td>
-        <td align="left"><%=current_user.requests[0].request_message%></td>
-        <td> <button>ACCEPT REQUEST</button><button>DECLINE REQUEST</button></td>
-      </tr>
-    </table>
-</div>
-
-</br>
-</br>
-</br>
+<p> -----requests you sent------</p>
 
 
-<div class="mentee_requests">
-  <h1><%=current_user.firstname%> <%=current_user.lastname%> would like a Mentor:</h1>
 
-  <table align="left">
-    <tr>
-      <th align="center">REQUEST_ID</th>
-      <th align="center">STATUS</th>
-      <th align="left">CATEGORY</th>
-      <th align="left">TITLE</th>
-      <th align="left">MESSAGE</th>
-      <th align="center">ACTION</th>
-    </tr>
-    <tr>
-      <td align="center"><%= current_user.requests[0].id %></td>
-      <td><%= current_user.requests[0].request_status %></td>
+<p>-------direct-------</p>
+<% @sent_requests.each do |m|%>
+  <%if m.mentor_id%>
+      title: <%= m.title%>
+      message: <%= m.request_message%>
+      time: <%= m.created_at%>
+      to: <%= User.find(m.mentor_id).firstname %>
+      status: <%= m.request_status%>
+      
 
-      <td align="left"><%= current_user.requests[0].category %></td>
-      <td align="left"><%= current_user.requests[0].title %></td>
-      <td align><%= current_user.requests[0].request_message %></td>
-      <td> 
-        <button>EDIT REQUEST</button>
-        <button>DELETE REQUEST</button>
-        <button>Click to e-mail your Mentor</button>
-      </td>
-    </tr>
-    </table>
-  </div>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
-<div class="assigned_mentors">
-  <h1> </h1>
-  <h1>Assigned Mentors for: <%=current_user.firstname%> <%=current_user.lastname%></h1>
 
-  <table align="left">
-    <tr>
-      <th align="center">REQUEST_ID</th>
-      <th align="center">STATUS</th>
-      <th align="left">CATEGORY</th>
-      <th align="left">TITLE</th>
-      <th align="left">MESSAGE</th>
-      <th align="center">ACTION</th>
-    </tr>
-    <tr>
-      <td align="center"><%=current_user.requests[0].id%></td>
-      <td><%=current_user.requests[0].request_status%></td>
+    <%if m.request_status == 'accepted'%>
+      <%= form_for m, method: :put do |f| %>
+        <p>contact: <%=User.find(m.mentor_id).email%></p>
+        <%=f.submit 'archived'%>
+      <%end%> 
+    <%else%>
+      <%= form_for m, method: :delete do |f| %>
+        <button>delete</button>
+      <%end%>
+    <%end%>
+  <%end%>
+<%end%>
 
-      <td align="left"><%=current_user.requests[0].category%></td>
 
-      <td align="left"><%=current_user.requests[0].title%></td>
-      <td align="left"><%=current_user.requests[0].request_message%></td>
-      <td> <button>Click to e-mail you Mentor</button><button>Rate Your Experience: Click to Conclude Mentoring Relationship</button></td>
-    </tr>
-    </table>
-</div>
-  
 
+<p>-------broadcasted-------</p>
+<% @sent_requests.each do |m|%>
+  <%if m.mentor_id ==nil%>
+      <p>title <%= m.title%></p> 
+      <p>category: <%= m.category %></p>
+      <p>message: <%= m.request_message%></p>
+      <p>time: <%= m.created_at%></p>
+      <p>status: <%= m.request_status%></p>
+
+      <%= form_for m, method: :delete do |f| %>
+        <button>delete</button>
+      <%end%>      
+  <%end%>
+<%end%>
+
+
+
+
+
+<p>-----requests you received------</p>
+<p>-------direct--------</p>
+<% @received_requests.each do |m|%>
+  <p>title <%= m.title%></p> 
+  <p>category: <%= m.category %></p>
+  <p>message: <%= m.request_message%></p>
+  <p>time: <%= m.created_at%></p>
+
+  <%= form_for m, method: :put do |f| %>
+    <%=f.submit 'accepted'%>
+    <%=f.submit 'declined'%>
+  <%end%> 
+
+<%end%>
+
+<p>------broadcasted----------</p>
+<% @mentor_categories.each do |c| %>
+  <p>category:  <%=c%></p>
+  <%@requests = Request.where(category: c).current%>
+  <%@requests.each do |r|%>
+    <%if r.user_id != current_user.id%>
+      From: <%=r.title%>
+      <%=r.user.firstname%>
+      <%= form_for r, method: :put do |f| %>
+        <%=f.submit 'accepted'%>
+      <%end%> 
+    <%end%>
+  <%end%>
+<%end%>

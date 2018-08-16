@@ -34,29 +34,16 @@ class UsersController < ApplicationController
         # add flash[:success] to user/id/show page after!!!
     end
 
-    def show
-        @sent_requests = Request.where(user: current_user).current
-        @received_requests =Request.where(mentor_id: current_user.id).current
-        
-        @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
-    end
     
 
 
-    def edit
-        render :edit
+    def show
+        #@user = User.current(params[:id])
+        #@users = helpers.current_user
+        #@user = User.find(params[:id])
+        #Interest.find_by(user_id:1).category
+        #@interest = Interest.find_by(user_id:(params[:id]))
     end
-
-    def update
-        @user = current_user
-        @user.profile_url = params[:profile_url]
-        @user.firstname = params[:firstname]
-        @user.lastname = params[:lastname]
-        if @user.save
-            redirect_to "/categories"
-        else
-            render :edit
-        end
     
     private
 
