@@ -8,6 +8,10 @@ module UsersHelper
     !!current_user #user object or nil
   end
 
+  def logo?
+    Request.where(mentor_id: current_user.id).where(request_status:'pending').count > 0
+  end
+
 end
 
 
