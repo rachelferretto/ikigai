@@ -39,6 +39,8 @@ class UsersController < ApplicationController
         @received_requests =Request.where(mentor_id: current_user.id).pending
         
         @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
+        @id = current_user.id.to_s
+     
     end
 
 
