@@ -3,8 +3,8 @@ class UsersController < ApplicationController
         @user = User.new
         @categories = Category.all
     end
-    
-    
+
+
     def create
         @user = User.new(user_params)
         @categories = Category.all
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
             flash[:notice] = @user.errors.full_messages
             render 'new'
-        else 
+        else
             if @skills
                 @user.save
                 @skills.each do |skill|
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
                     new_skill.save
                 end
             end
-            flash[:success] = "Welcome to the Sample App!"
+            flash[:success] = "Welcome to ikigai!"
             redirect_to @user
         end
         # add flash[:success] to user/id/show page after!!!
@@ -36,11 +36,11 @@ class UsersController < ApplicationController
 
     def show
         @sent_requests = Request.where(user: current_user).current
-        @received_requests =Request.where(mentor_id: current_user.id).current
+        @received_requests =Request.where(mentor_id: current_user.id).pending
         
         @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
     end
-    
+
 
 
     def edit
@@ -57,8 +57,14 @@ class UsersController < ApplicationController
         else
             render :edit
         end
+<<<<<<< HEAD
     end
     
+
+=======
+    end 
+>>>>>>> 0db3c3de19ed078090fcaec1a314b9b177c9189d
+
     private
 
     def user_params

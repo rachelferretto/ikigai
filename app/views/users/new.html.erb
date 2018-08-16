@@ -1,43 +1,54 @@
-<p>signup page</p>
+<div class="login_grid">
 
-<h3>-- show error if has any-----</h3>
-<% if flash[:notice] %>
-    <% flash[:notice].each do |error| %>
-        <%= error %>
+  <div class="nav_bar">
+
+    <% if flash[:notice] %>
+        <% flash[:notice].each do |error| %>
+            <%= error %>
+        <% end %>
     <% end %>
-<% end %>
 
-<%= form_for(@user) do |f| %>
-    <%= f.label :firstname %>
-    <%= f.text_field :firstname %>
-    
-    <%= f.label :lastname %>
-    <%= f.text_field :lastname %>
+  </div>
 
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+  <div class="s_logo_cont">
+    <a href="/"><div class="s_logo">
+      ikigai
+    </div></a>
+  </div>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="login_cont">
+    <%= form_for(@user) do |f| %>
 
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
-    
+        <%= f.text_field :firstname, placeholder: "first name"  %>
 
+        <%= f.text_field :lastname, placeholder: "last name"  %>
 
+        <%= f.email_field :email, placeholder: "email"  %>
 
-    <% @categories.each do |c| %>
-        <%= c.name%>
-        <%= check_box_tag "skills[]",c.name%>
+        <%= f.text_field :profile_url, placeholder: "profile image url" %>
 
-    <%end%>
+        <%= f.password_field :password, placeholder: "●●●●●●●"  %>
 
-    <%= f.submit "Create my account" %>
+        <%= f.password_field :password_confirmation, placeholder: "●●●●●●●"  %>
 
-<% end %>
+        <%= f.label "your skills:" %>
+        <div class="category_selection"><% @categories.each do |c| %>
+            <div><%= c.name%>
+            <%= check_box_tag "skills[]",c.name%></div>
+        <%end%>
+        </div>
 
+        <div class="submit_btn"><%= f.submit "submit →" %></div>
 
+    <% end %>
+  </div>
 
+  <div class="footer_bar">
+    <a href="">
+      <span>About Ikigai</span>
+    </a>
 
+    <span>Footer Stuff &copy;</span>
+  </div>
 
-
+</div>
