@@ -81,3 +81,76 @@
     <%end%>
   <%end%>
 <%end%>
+
+<%# route: /users/:id %>
+<h1>MENTOR DASHBOARD FOR CURRENT USER</h1>
+<a href="/users/1/edit">edit profile</a>
+<a href="/requests/1/edit">edit request</a>
+
+<form action="/users/<%= current_user.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete</button>
+</form>
+
+<table>
+  <tr>
+    <th>PRIVATE REQUEST</th>
+    <th>POSSIBLE MENTEE</th>
+    <th>ACTION</th>
+  </tr>
+  <tr>
+    <td>MentorID Skill=Interest</td>
+    <td>name of mentee match</td>
+    <td><button>Accept</button><button>Decline</button></td>
+  </tr>
+  <tr>
+  <td><%= current_user.firstname %></td>
+  <td><%= current_user.lastname %></td>
+  <td><button>Accept</button><button>Decline</button></td>
+
+  </tr>
+  </table>
+  </br>
+  </br>
+  <table>
+    <tr>
+    <th>BROADCAST REQUEST</th>
+    <th>POSSIBLE MENTEE</th>
+    <th>ACTION</th>
+    </tr>
+  <tr>
+    <td>No MentorID Skill=Interest</td>
+    <td>name of mentee match</td>
+    <td><button>Accept</button><button>Decline</button></td>
+  </tr>
+
+</table>
+
+<p><%= current_user.firstname %></p>
+<a href="/user/<%= current_user.id %>/edit">edit</a>
+
+<h1>MENTEE DASHBOARD FOR CURRENT USER</h1>
+
+<table>
+  <tr>
+    <th>PRIVATE REQUEST</th>
+    <th>POSSIBLE MENTOR</th>
+    <th>STATUS</th>
+    <th>INITIATE COMMUNICATION</th>
+  </tr>
+  <tr>
+    <td>MentorID Skill=Interest</td>
+    <td>name of mentor match</td>
+    <td>Accepted/Declined</td>
+    <td><button>Click to e-mail your Mentor</button></td>
+  </tr>
+  <tr>
+    <td><%current_user.firstname%></td>
+    <td><%=current_user.lastname%></td>
+    <td>Accepted/Declined</td>
+    <td><button>Click to e-mail your Mentor</button></td>
+
+
+  </tr>
+  </table>
