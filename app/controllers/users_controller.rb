@@ -28,7 +28,7 @@ class UsersController < ApplicationController
                     new_skill.save
                 end
             end
-            flash[:success] = "Welcome to the Sample App!"
+            flash[:success] = "Welcome to ikigai!"
             redirect_to @user
         end
         # add flash[:success] to user/id/show page after!!!
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
     def show
         @sent_requests = Request.where(user: current_user).current
-        @received_requests =Request.where(mentor_id: current_user.id).current
+        @received_requests =Request.where(mentor_id: current_user.id).pending
         
         @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
     end
@@ -57,7 +57,8 @@ class UsersController < ApplicationController
         else
             render :edit
         end
-    
+    end 
+
     private
 
     def user_params
