@@ -52,6 +52,12 @@ steven = User.create(firstname: 'Steven', lastname: 'Spielberg', email: 'steven@
 
 kevin = User.create(firstname: 'Kevin', lastname: 'Hart', email: 'kevin@email.com', password: 'pudding', profile_url: 'https://assets.entrepreneur.com/content/3x2/2000/20180509212515-ent18-june-kevinhart-1.jpeg', zip_code: 3010, bio: '' )
 
+homer = User.create(firstname: 'Homer', lastname: 'Simpson', email: 'homer@email.com', password: 'pudding', profile_url: 'https://m.media-amazon.com/images/M/MV5BYjFkMTlkYWUtZWFhNy00M2FmLThiOTYtYTRiYjVlZWYxNmJkXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg', zip_code: 3010, bio: '' )
+
+dt = User.create(firstname: 'DT', lastname: 'Tsui', email: 'dt@email.com', password: 'pudding', profile_url: 'https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/1700/thumb_HEADSHOTS__2001_.jpg', zip_code: 3010, bio: '' )
+
+kasun = User.create(firstname: 'Kasun', lastname: 'Maldeni', email: 'kasun@email.com', password: 'pudding', profile_url: 'https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/10879/thumb_kasun.jpg', zip_code: 3010, bio: '' )
+
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
 skill2 = Skill.create(keyword: '', user: gordon, category: 'Food and Drink')
@@ -71,6 +77,13 @@ skill15 = Skill.create(keyword: '', user: bear, category:'Outdoor and adventure'
 skill16 = Skill.create(keyword: '', user: caitlin, category:'LGBTQ')
 skill17 = Skill.create(keyword: '', user: steven, category:'Film')
 skill18 = Skill.create(keyword: '', user: kevin, category:'Health and Wellness')
+skill19 = Skill.create(keyword: '', user: homer, category:'Family')
+skill20 = Skill.create(keyword: '', user: dt, category:'Academia')
+skill21 = Skill.create(keyword: '', user: kasun, category:'Academia')
+
+
+
+
 
 
 
