@@ -1,24 +1,27 @@
 
-<p>welcome home <%= current_user.firstname%> <%= current_user.lastname%></p>
+<h1>Welcome, <%= current_user.firstname%> <%= current_user.lastname%></h1>
+<div><a href="/users/<%=current_user.id%>/edit">edit profile</a> |
+<a href="/">explore new skills</a></div>
 <img src="<%= current_user.profile_url%>" alt="">
-<div><a href="/users/<%=current_user.id%>/edit">edit profile</a></div>
-
-<p> -----requests you sent------</p>
 
 
 
-<p>-------direct-------</p>
-<% @sent_requests.each do |m|%>
-  <%if m.mentor_id%>
-      title: <%= m.title%>
-      message: <%= m.request_message%>
-      time: <%= m.created_at%>
-      to: <%= User.find(m.mentor_id).firstname %>
-      status: <%= m.request_status%>
-      
+<h2><%=current_user.firstname%>, looking to be mentored? here are your current open requests:</h2>
+<br>
+<div class="container">
+    <h3> Direct requests you have sent: </h3>
+    <div class="request">
+      <% @sent_requests.each do |m|%>
+        <%if m.mentor_id%>
+        <p>title: <%= m.title%></p>
+        <p>message: <%= m.request_message%></p>
+        <p>time: <%= m.created_at%></p>
+        <p>to: <%= User.find(m.mentor_id).firstname %></p>
+        <p>status: <%= m.request_status%></p>
+    </div>
+</div>
 
-
-    <%if m.request_status == 'accepted'%>
+    <%if m.request_status == 'accept'%>
       <%= form_for m, method: :put do |f| %>
         <p>contact: <%=User.find(m.mentor_id).email%></p>
         <%=f.submit 'archived'%>
@@ -33,124 +36,70 @@
 
 
 
-<p>-------broadcasted-------</p>
-<% @sent_requests.each do |m|%>
-  <%if m.mentor_id ==nil%>
-      <p>title <%= m.title%></p> 
-      <p>category: <%= m.category %></p>
-      <p>message: <%= m.request_message%></p>
-      <p>time: <%= m.created_at%></p>
-      <p>status: <%= m.request_status%></p>
+<div class="container">
+  <h3> General requests you have sent, based on what you want to learn: </h3>
+  <div class="request">
+  <% @sent_requests.each do |m|%>
+      <%if m.mentor_id ==nil%>
+          <p>subject: <%= m.title%></p> 
+          <p>category: <%= m.category %></p>
+          <p>message: <%= m.request_message%></p>
+          <p>time: <%= m.created_at%></p>
+          <p>status: <%= m.request_status%></p>
 
-      <%= form_for m, method: :delete do |f| %>
-        <button>delete</button>
-      <%end%>      
+          <%= form_for m, method: :delete do |f| %>
+            <button>delete</button>
+          <%end%>      
+      <%end%>
+    </div>
   <%end%>
-<%end%>
+</div>
 
 
 
+<div class="container">
+  <h2><%=current_user.firstname%> will you be my Mentor?</h2>
+  <h3> Direct requests to review:</h3>
+  <div class="request">
+    <% @received_requests.each do |m|%>
+      <% if m.hidden? ==false %>
+        <p>title: <%= m.title%></p> 
+        <p>category: <%= m.category %></p>
+        <p>message: <%= m.request_message%></p>
+        <p>time: <%= m.created_at%></p>
 
-
-<p>-----requests you received------</p>
-<p>-------direct--------</p>
-<% @received_requests.each do |m|%>
-  <p>title <%= m.title%></p> 
-  <p>category: <%= m.category %></p>
-  <p>message: <%= m.request_message%></p>
-  <p>time: <%= m.created_at%></p>
-
-  <%= form_for m, method: :put do |f| %>
-    <%=f.submit 'accepted'%>
-    <%=f.submit 'declined'%>
-  <%end%> 
-
-<%end%>
-
-<p>------broadcasted----------</p>
-<% @mentor_categories.each do |c| %>
-  <p>category:  <%=c%></p>
-  <%@requests = Request.where(category: c).current%>
-  <%@requests.each do |r|%>
-    <%if r.user_id != current_user.id%>
-      From: <%=r.title%>
-      <%=r.user.firstname%>
-      <%= form_for r, method: :put do |f| %>
-        <%=f.submit 'accepted'%>
-      <%end%> 
+        <%= form_for m, method: :put do |f| %>
+          <%=f.submit 'accept'%>
+          <%=f.submit 'decline'%>
+        <%end%> 
+      <%end%>
     <%end%>
-  <%end%>
-<%end%>
-
-<%# route: /users/:id %>
-<h1>MENTOR DASHBOARD FOR CURRENT USER</h1>
-<a href="/users/1/edit">edit profile</a>
-<a href="/requests/1/edit">edit request</a>
-
-<form action="/users/<%= current_user.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="delete">
-  <button>delete</button>
-</form>
-
-<table>
-  <tr>
-    <th>PRIVATE REQUEST</th>
-    <th>POSSIBLE MENTEE</th>
-    <th>ACTION</th>
-  </tr>
-  <tr>
-    <td>MentorID Skill=Interest</td>
-    <td>name of mentee match</td>
-    <td><button>Accept</button><button>Decline</button></td>
-  </tr>
-  <tr>
-  <td><%= current_user.firstname %></td>
-  <td><%= current_user.lastname %></td>
-  <td><button>Accept</button><button>Decline</button></td>
-
-  </tr>
-  </table>
-  </br>
-  </br>
-  <table>
-    <tr>
-    <th>BROADCAST REQUEST</th>
-    <th>POSSIBLE MENTEE</th>
-    <th>ACTION</th>
-    </tr>
-  <tr>
-    <td>No MentorID Skill=Interest</td>
-    <td>name of mentee match</td>
-    <td><button>Accept</button><button>Decline</button></td>
-  </tr>
-
-</table>
-
-<p><%= current_user.firstname %></p>
-<a href="/user/<%= current_user.id %>/edit">edit</a>
-
-<h1>MENTEE DASHBOARD FOR CURRENT USER</h1>
-
-<table>
-  <tr>
-    <th>PRIVATE REQUEST</th>
-    <th>POSSIBLE MENTOR</th>
-    <th>STATUS</th>
-    <th>INITIATE COMMUNICATION</th>
-  </tr>
-  <tr>
-    <td>MentorID Skill=Interest</td>
-    <td>name of mentor match</td>
-    <td>Accepted/Declined</td>
-    <td><button>Click to e-mail your Mentor</button></td>
-  </tr>
-  <tr>
-    <td><%current_user.firstname%></td>
-    <td><%=current_user.lastname%></td>
-    <td>Accepted/Declined</td>
-    <td><button>Click to e-mail your Mentor</button></td>
+  </div>
+</div>
+<br>
+<div class="container">
+  <h3> Requests for skills you have </h3>
+  <div class="request">
+    <% @mentor_categories.each do |c| %>
+      <p>category:  <%=c%></p>
+      <%@requests = Request.where(category: c).pending%>
+      <%@requests.each do |r|%>
+        <%if r.user_id != current_user.id  %>
+          <%if r.hidden?%>
+            <p>message hidden</p>
+          <%else%>
+            <%=r.title%>
+            From:<%=r.user.firstname%>
+            status: <%=r.request_status%>
+            <%= form_for r, method: :put do |f| %>
+              <%=f.submit 'accept'%>
+              <button><a href="/hide?id=<%=r.id%>">hide</a></button>
+            <%end%> 
+          <%end%>
+        <%end%>
+      <%end%>
+    <%end%>
+  </div>
+</div>
 
 
-  </tr>
-  </table>

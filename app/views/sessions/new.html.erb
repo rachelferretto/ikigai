@@ -1,19 +1,42 @@
-<h1>Log in</h1> 
+<div class="login_grid">
 
-<% if flash[:notice] %>
-    <h3>-- show error if has any-----</h3>
-    <%= flash[:notice] %>
-<% end %>
+  <div class="nav_bar">
 
-<%= form_for(:session, url: sessions_path) do |f| %>
+  </div>
 
-    <%= f.label :email %>
-    <%= f.email_field :email%>
+  <div class="s_logo_cont">
+    <a href="/"><div class="s_logo">
+      ikigai
+    </div></a>
+  </div>
 
-    <%= f.label :password %>
-    <%= f.password_field :password%>
+  <div class="login_cont">
 
-    <%= f.submit "Log in"%>
-<% end %>
+    <% if flash[:notice] %>
+        <h3>-- show error if has any-----</h3>
+        <%= flash[:notice] %>
+    <% end %>
 
-<p>New user? <%= link_to "Sign up now!", '../users/new' %></p>
+      <%= form_for(:session, url: sessions_path) do |f| %>
+
+          <%= f.email_field :email, placeholder: "email" %>
+
+          <%= f.password_field :password, placeholder: "●●●●●●●" %>
+
+          <button class="white_button">
+            login &rarr;
+          </button>
+      <% end %>
+
+    <p>New? <%= link_to "Sign up →", '../users/new' %></p>
+  </div>
+
+  <div class="footer_bar">
+    <a href="">
+      <span>About Ikigai</span>
+    </a>
+
+    <span>Footer Stuff &copy;</span>
+  </div>
+
+</div>

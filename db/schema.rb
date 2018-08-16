@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_051900) do
+ActiveRecord::Schema.define(version: 2018_08_16_030206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,13 +18,6 @@ ActiveRecord::Schema.define(version: 2018_08_14_051900) do
   create_table "categories", force: :cascade do |t|
     t.text "name"
     t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "catergories", force: :cascade do |t|
-    t.text "url"
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +40,8 @@ ActiveRecord::Schema.define(version: 2018_08_14_051900) do
     t.string "request_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "mentor_action"
+    t.text "hide_by"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
