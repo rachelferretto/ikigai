@@ -11,6 +11,7 @@
 <div class="container">
     <h3> Direct requests you have sent: </h3>
     <div class="request">
+    <% if @sent_requests %>
       <% @sent_requests.each do |m|%>
         <%if m.mentor_id%>
         <p>title: <%= m.title%></p>
@@ -31,6 +32,7 @@
         <button>delete</button>
       <%end%>
     <%end%>
+    <%end%>
   <%end%>
 <%end%>
 
@@ -39,6 +41,7 @@
 <div class="container">
   <h3> General requests you have sent, based on what you want to learn: </h3>
   <div class="request">
+  <% if @sent_requests%>
   <% @sent_requests.each do |m|%>
       <%if m.mentor_id ==nil%>
           <p>subject: <%= m.title%></p> 
@@ -50,6 +53,7 @@
           <%= form_for m, method: :delete do |f| %>
             <button>delete</button>
           <%end%>      
+          <%end%>
       <%end%>
     </div>
   <%end%>
@@ -61,6 +65,7 @@
   <h2><%=current_user.firstname%> will you be my Mentor?</h2>
   <h3> Direct requests to review:</h3>
   <div class="request">
+  <% if @received_requests %>
     <% @received_requests.each do |m|%>
       <% if m.hidden? ==false %>
         <p>title: <%= m.title%></p> 
@@ -74,12 +79,14 @@
         <%end%> 
       <%end%>
     <%end%>
+    <%end%>
   </div>
 </div>
 <br>
 <div class="container">
   <h3> Requests for skills you have </h3>
   <div class="request">
+  <%if @mentor_categories %>
     <% @mentor_categories.each do |c| %>
       <p>category:  <%=c%></p>
       <%@requests = Request.where(category: c).pending%>
@@ -98,6 +105,7 @@
           <%end%>
         <%end%>
       <%end%>
+    <%end%>
     <%end%>
   </div>
 </div>

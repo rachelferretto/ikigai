@@ -7,9 +7,9 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+        
         @categories = Category.all
         @skills = params[:skills]
-        p @skills
         if @user.email_taken?
             flash[:notice] = ["email already exists"]
             render 'new'
@@ -21,26 +21,33 @@ class UsersController < ApplicationController
         else
             if @skills
                 @user.save
+                
                 @skills.each do |skill|
                     new_skill = Skill.new
                     new_skill.category = skill
                     new_skill.user = @user
                     new_skill.save
                 end
+            else
+                @user.save
             end
+            session[:user_id] = @user.id
             flash[:success] = "Welcome to ikigai!"
             redirect_to @user
         end
+ 
         # add flash[:success] to user/id/show page after!!!
     end
 
     def show
-        @sent_requests = Request.where(user: current_user).current
-        @received_requests =Request.where(mentor_id: current_user.id).pending
-  
-        @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
-        @id = current_user.id.to_s
-     
+        if current_user && Request.where(user: current_user) && Request.where(mentor_id: current_user.id)&& @mentor_categories 
+            @sent_requests = Request.where(user: current_user).current
+            @received_requests =Request.where(mentor_id: current_user.id).pending
+    
+            @mentor_categories = Skill.where(user_id: current_user.id).map{|s|s.category}
+            
+        end
+        
     end
 
 
