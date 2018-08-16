@@ -12,7 +12,7 @@
 
   <div class="login_cont">
 
-    <% if  flash[:notice]  %>
+    <% if  flash[:notice].class == String %>
         <%=flash[:notice]%>
     <% end %>
 
