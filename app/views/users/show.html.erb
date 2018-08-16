@@ -18,8 +18,6 @@
         <p>time: <%= m.created_at%></p>
         <p>to: <%= User.find(m.mentor_id).firstname %></p>
         <p>status: <%= m.request_status%></p>
-   
-        <a href="/requests/1/edit">edit request</a>
     </div>
 </div>
 
@@ -64,34 +62,40 @@
   <h3> Direct requests to review:</h3>
   <div class="request">
     <% @received_requests.each do |m|%>
-    <p>title: <%= m.title%></p> 
-    <p>category: <%= m.category %></p>
-    <p>message: <%= m.request_message%></p>
-    <p>time: <%= m.created_at%></p>
-    
+      <% if m.hidden? ==false %>
+        <p>title: <%= m.title%></p> 
+        <p>category: <%= m.category %></p>
+        <p>message: <%= m.request_message%></p>
+        <p>time: <%= m.created_at%></p>
 
-    <%= form_for m, method: :put do |f| %>
-      <%=f.submit 'accept'%>
-      <%=f.submit 'decline'%>
-    <%end%> 
+        <%= form_for m, method: :put do |f| %>
+          <%=f.submit 'accept'%>
+          <%=f.submit 'decline'%>
+        <%end%> 
+      <%end%>
+    <%end%>
   </div>
-
-<%end%>
 </div>
 <br>
 <div class="container">
-  <h3> Requests you have accepted </h3>
+  <h3> Requests for skills you have </h3>
   <div class="request">
     <% @mentor_categories.each do |c| %>
       <p>category:  <%=c%></p>
-      <%@requests = Request.where(category: c).current%>
+      <%@requests = Request.where(category: c).pending%>
       <%@requests.each do |r|%>
-        <%if r.user_id != current_user.id%>
-          From: <%=r.title%>
-          <%=r.user.firstname%>
-          <%= form_for r, method: :put do |f| %>
-            <%=f.submit 'accept'%>
-          <%end%> 
+        <%if r.user_id != current_user.id  %>
+          <%if r.hidden?%>
+            <p>message hidden</p>
+          <%else%>
+            <%=r.title%>
+            From:<%=r.user.firstname%>
+            status: <%=r.request_status%>
+            <%= form_for r, method: :put do |f| %>
+              <%=f.submit 'accept'%>
+              <button><a href="/hide?id=<%=r.id%>">hide</a></button>
+            <%end%> 
+          <%end%>
         <%end%>
       <%end%>
     <%end%>

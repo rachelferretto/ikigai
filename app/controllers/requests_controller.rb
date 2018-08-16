@@ -49,6 +49,18 @@ class RequestsController < ApplicationController
         redirect_to current_user
     end
 
+    def hide
+        @request = Request.find(params[:id])
+        if @request.hide_by == nil
+            @request.hide_by = current_user.id
+        else
+            @request.hide_by +=","+ current_user.id.to_s
+        end
+      
+        @request.save
+        redirect_to current_user
+    end
+
       
  
 
