@@ -1,105 +1,201 @@
+<div class="dashboard_layout">
 
-<h1>Welcome, <%= current_user.firstname%> <%= current_user.lastname%></h1>
-<div><a href="/users/<%=current_user.id%>/edit">edit profile</a> |
-<a href="/">explore new skills</a></div>
-<img src="<%= current_user.profile_url%>" alt="">
+  <div class="dashboard_nav">
 
-
-
-<h2><%=current_user.firstname%>, looking to be mentored? here are your current open requests:</h2>
-<br>
-<div class="container">
-    <h3> Direct requests you have sent: </h3>
-    <div class="request">
-      <% @sent_requests.each do |m|%>
-        <%if m.mentor_id%>
-        <p>title: <%= m.title%></p>
-        <p>message: <%= m.request_message%></p>
-        <p>time: <%= m.created_at%></p>
-        <p>to: <%= User.find(m.mentor_id).firstname %></p>
-        <p>status: <%= m.request_status%></p>
+    <div class="home">
+      <div class="dashboard_logo">
+        <a href="/">
+          <div class="ss_logo">
+            ikigai
+          </div>
+        </a>
+      </div>
     </div>
-</div>
 
-    <%if m.request_status == 'accept'%>
-      <%= form_for m, method: :put do |f| %>
-        <p>contact: <%=User.find(m.mentor_id).email%></p>
-        <%=f.submit 'archived'%>
-      <%end%> 
-    <%else%>
-      <%= form_for m, method: :delete do |f| %>
-        <button>delete</button>
-      <%end%>
-    <%end%>
-  <%end%>
-<%end%>
+    <div class="nav_controls">
+      <span class="login">
+        <a href="/users/<%=current_user.id%>/edit">edit profile
+        </a>
+      </span>
 
-
-
-<div class="container">
-  <h3> General requests you have sent, based on what you want to learn: </h3>
-  <div class="request">
-  <% @sent_requests.each do |m|%>
-      <%if m.mentor_id ==nil%>
-          <p>subject: <%= m.title%></p> 
-          <p>category: <%= m.category %></p>
-          <p>message: <%= m.request_message%></p>
-          <p>time: <%= m.created_at%></p>
-          <p>status: <%= m.request_status%></p>
-
-          <%= form_for m, method: :delete do |f| %>
-            <button>delete</button>
-          <%end%>      
-      <%end%>
+      <form action="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button class="logout">logout</button>
+      </form>
     </div>
-  <%end%>
-</div>
 
-
-
-<div class="container">
-  <h2><%=current_user.firstname%> will you be my Mentor?</h2>
-  <h3> Direct requests to review:</h3>
-  <div class="request">
-    <% @received_requests.each do |m|%>
-      <% if m.hidden? ==false %>
-        <p>title: <%= m.title%></p> 
-        <p>category: <%= m.category %></p>
-        <p>message: <%= m.request_message%></p>
-        <p>time: <%= m.created_at%></p>
-
-        <%= form_for m, method: :put do |f| %>
-          <%=f.submit 'accept'%>
-          <%=f.submit 'decline'%>
-        <%end%> 
-      <%end%>
-    <%end%>
   </div>
-</div>
-<br>
-<div class="container">
-  <h3> Requests for skills you have </h3>
-  <div class="request">
-    <% @mentor_categories.each do |c| %>
-      <p>category:  <%=c%></p>
-      <%@requests = Request.where(category: c).pending%>
-      <%@requests.each do |r|%>
-        <%if r.user_id != current_user.id  %>
-          <%if r.hidden?%>
-            <p>message hidden</p>
-          <%else%>
-            <%=r.title%>
-            From:<%=r.user.firstname%>
-            status: <%=r.request_status%>
-            <%= form_for r, method: :put do |f| %>
-              <%=f.submit 'accept'%>
-              <button><a href="/hide?id=<%=r.id%>">hide</a></button>
-            <%end%> 
+
+  <div class="dashboard_main">
+
+    <div class="dashboard_title">
+      <h1>dashboard</h1>
+
+      <h1><%= current_user.firstname%> <%= current_user.lastname%></h1>
+    </div>
+
+    <!-- grid layout for dashboard panels -->
+    <div class="dashboard_panels">
+
+      <div class="profile_image">
+        <img src="<%= current_user.profile_url %>" alt="">
+      </div>
+
+      <div class="inbox">
+        <!-- request inbox start -->
+        <div class="request_inbox">
+          <h2>inbox</h2>
+
+          <% @received_requests.each do |m|%>
+            <div class="request">
+              <% if m.hidden? ==false %>
+                <p>title:
+                  <%= m.title%></p>
+                <p>category:
+                  <%= m.category %></p>
+                <p>message:
+                  <%= m.request_message%></p>
+                <p>time:
+                  <%= m.created_at%></p>
+
+                <%= form_for m, method: :put do |f| %>
+                  <%=f.submit 'accept'%>
+                  <%=f.submit 'decline'%>
+                <%end%>
+
+              <%end%>
+            </div>
           <%end%>
-        <%end%>
-      <%end%>
-    <%end%>
-  </div>
+        </div>
+        <!-- request inbox end -->
+      </div>
+
+      <div class="your_requests">
+        <h2>your requests</h2>
+        <!-- sent direct requests cont start -->
+        <div class="sent_direct_request">
+          <h3>direct</h3>
+
+            <!-- list of sent requests start -->
+            <% @sent_requests.each do |m|%>
+              <%if m.mentor_id %>
+                <div class="request">
+                  <p>title:
+                    <%= m.title%></p>
+                  <p>message:
+                    <%= m.request_message%></p>
+                  <p>time:
+                    <%= m.created_at%></p>
+                  <p>to:
+                    <%= User.find(m.mentor_id).firstname %></p>
+                  <p>status:
+                    <%= m.request_status%></p>
+
+                  <%if m.request_status == 'accept'%>
+                    <%= form_for m, method: :put do |f| %>
+                      <p>contact:
+                      <%=User.find(m.mentor_id).email%></p>
+                      <%=f.submit 'archived'%>
+                    <%end%>
+                  <%else%>
+                    <%= form_for m, method: :delete do |f| %>
+                      <button>delete</button>
+                    <%end%>
+                  <%end%>
+                </div>
+              <%end%>
+            <%end%>
+            <!-- list of sent requests end -->
+
+        </div>
+        <!-- sent direct requests cont end -->
+
+        <!-- broadcasted requests start -->
+        <div class="sent_broadcasted_request">
+          <h3>public</h3>
+
+          <!-- sent_requests start -->
+          <% @sent_requests.each do |m|%>
+            <div class="request">
+              <%if m.mentor_id == nil%>
+                <h3>
+                  <%= m.title%>
+                </h3>
+
+                <h4>in:
+                  <%= m.category %>
+                </h4>
+
+                <p>
+                  <%= m.request_message%>
+                </p>
+
+                <h4>
+                  <%= m.created_at.strftime("%b %d, %Y at %H:%M%P")%>
+                </h4>
+
+                <!-- <p>status:
+                  <%= m.request_status%></p> -->
+
+                <%= form_for m, method: :delete do |f| %>
+                  <button>delete</button>
+                <%end%>
+
+              <%end%>
+            </div>
+          <%end%>
+          <!-- sent_requests end -->
+
+        </div>
+        <!-- broadcasted requests end -->
+      </div>
+
+      <div class="broadcasts">
+        <h2>public requests</h2>
+        <!-- broadcast feed start -->
+        <div class="broadcast_feed">
+
+        <div class="request">
+          <% @mentor_categories.each do |c| %>
+            <h4>
+              <%=c%>:</h4>
+            <%@requests = Request.where(category: c).pending%>
+            <%@requests.each do |r|%>
+              <%if r.user_id != current_user.id  %>
+                <%if r.hidden?%>
+                  <p>message hidden</p>
+                <%else%>
+                  <%=r.title%>
+                  From:<%=r.user.firstname%>
+                  status:
+                  <%=r.request_status%>
+                  <%= form_for r, method: :put do |f| %>
+                  <%=f.submit 'accept'%>
+                  <button>
+                    <a href="/hide?id=<%=r.id%>">hide</a>
+                  </button>
+                <%end%>
+              <%end%>
+            <%end%>
+          <%end%>
+          <%end%>
+          </div>
+        </div>
+        <!-- broadcast feed end -->
+      </div>
+
+    </div>
+    <!-- grid layout for dashboard panels END -->
+
 </div>
 
+  <div class="dashboard_footer">
+  <a href="">
+  <span>About Ikigai</span>
+  </a>
 
+  <span>Footer Stuff &copy;</span>
+</div>
+
+</div>

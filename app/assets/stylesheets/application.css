@@ -128,10 +128,9 @@ nav {
   margin: 0 auto;
   background-color: #212121;
   height: 50px;
-  width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 5px 20px 0px 20px;
 }
@@ -156,7 +155,6 @@ nav {
   border: none;
   font-size: 100%;
   color: white;
-  padding: 5px;
   border-top: 5px solid #e8dcdc;
   border-right: 5px solid #6d2835;
   transition: .4s ease all;
@@ -164,6 +162,7 @@ nav {
   border-radius: 5px;
   margin: 5px;
   margin-top: 0;
+  padding: 5px;
 }
 
 .login:hover, button:hover {
@@ -181,14 +180,12 @@ button:focus {
 
 .current_user {
   color: white;
-  width: 100vw;
 }
 
 .explore {
   color: black;
   padding: 15px;
   margin: 0px auto;
-  width: 100vw;
   background-color: #e8dcdc;
 }
 
@@ -238,7 +235,6 @@ button:focus {
 footer {
   background-color: #212121;
   height: 50px;
-  width: 100vw;
   color: white;
   padding: 20px;
   display: flex;
@@ -249,7 +245,7 @@ footer {
 
 .login_grid {
   display: grid;
-  height: 100%;
+  height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 50px 150px 1fr 1fr 150px 50px;
   grid-gap: 1px 1px;
@@ -261,13 +257,11 @@ footer {
 
 .nav_bar {
   grid-area: nav_bar;
-  margin: 0 auto;
   background-color: #212121;
   height: 50px;
-  width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 5px 20px 0px 20px;
 }
@@ -463,7 +457,8 @@ footer {
 
 ::-webkit-scrollbar {
     background: transparent;
-    width: 8px;
+    width: 5px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -488,4 +483,160 @@ footer {
 .white_button:hover {
   background-color: white;
   color: black;
+}
+
+
+.dashboard_layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 1fr 1fr 50px;
+  grid-gap: 1px 1px;
+  grid-template-areas: "dashboard_nav dashboard_nav dashboard_nav dashboard_nav" "dashboard_main dashboard_main dashboard_main dashboard_main" "dashboard_main dashboard_main dashboard_main dashboard_main" "dashboard_footer dashboard_footer dashboard_footer dashboard_footer";
+  background-image: url("/mt_fuji.jpeg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.dashboard_nav {
+  grid-area: dashboard_nav;
+  background-color: #212121;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px 0px 20px;
+}
+
+.dashboard_logo {
+  grid-area: dashboard_logo;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 20px;
+  max-height: 50px;
+}
+
+.dashboard_main {
+  grid-area: dashboard_main;
+  padding: 10px;
+  margin: 25px;
+  border-bottom: 15px solid #6d2835;
+  border-right: 15px solid #e8dcdc;
+  border-radius: 10px;
+  color: black;
+  background-color: rgba(255,255,255,.4);
+  overflow: scroll;
+}
+
+.dashboard_main h1, h2, h3, h4 {
+  color: black;
+}
+
+.dashboard_main h1 {
+  margin: 0;
+}
+
+.dashboard_main button {
+  color: black;
+}
+
+.dashboard_footer {
+  grid-area: dashboard_footer;
+  background-color: #212121;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px 0px 20px;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ss_logo {
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 5px;
+  border-left: 5px solid #6d2835;
+  border-bottom: 5px solid #e8dcdc;
+  font-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s ease all;
+  margin-top: 0;
+  padding: 5px;
+}
+
+.ss_logo:hover {
+  border-left: 5px solid #e8dcdc;
+  border-bottom: 5px solid #6d2835;
+}
+
+.nav_controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.request{
+  border-radius: 5px;
+  background-color: white;
+  margin: 5px;
+  padding: 5px;
+}
+
+.sent_direct_request, .sent_broadcasted_request, .request_inbox, .broadcast_feed {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .6);
+  margin: 10px;
+  padding: 5px;
+}
+
+.request_inbox, .broadcast_feed {
+  height: 100%;
+}
+
+.dashboard_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard_panels {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px 1px;
+  grid-template-areas: "inbox inbox inbox profile_image" "your_requests your_requests your_requests broadcasts" "your_requests your_requests your_requests broadcasts";
+}
+
+.profile_image {
+  grid-area: profile_image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_image img {
+  border-radius: 5px;
+  width: 250px;
+  height: auto;
+}
+
+.inbox {
+  grid-area: inbox;
+}
+
+.your_requests {
+  grid-area: your_requests;
+}
+
+.broadcasts {
+  grid-area: broadcasts;
 }
