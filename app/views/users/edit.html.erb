@@ -1,7 +1,47 @@
-<%= form_for current_user do %>
-  Your picture : <input type="text" name="profile_url" value="<%= current_user.profile_url%>">  
-  First name :<input type="text" name="firstname" value="<%= current_user.firstname%>"> 
-  Last name :<input type="text" name="lastname" value="<%= current_user.lastname%>"> 
-  email :<input type="text" name="email" value="<%= current_user.email%>"> 
-  <button>update profile</button>
-<% end %>
+<div class="login_grid">
+
+  <div class="nav_bar">
+
+    <% if flash[:notice] %>
+        <% flash[:notice].each do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>
+
+  </div>
+
+  <div class="s_logo_cont">
+    <a href="/"><div class="s_logo">
+      ikigai
+    </div></a>
+  </div>
+
+  <div class="login_cont">
+
+    <%= form_for current_user do %>
+
+      First name:<input type="text" name="firstname" value="<%= current_user.firstname%>">
+
+      Last name:<input type="text" name="lastname" value="<%= current_user.lastname%>">
+
+      Your picture: <input type="text" name="profile_url" value="<%= current_user.profile_url%>">
+
+      email:<input type="text" name="email" value="<%= current_user.email%>">
+
+      <button class="white_button">
+        update &rarr;
+      </button>
+
+    <% end %>
+
+  </div>
+
+  <div class="footer_bar">
+    <a href="">
+      <span>About Ikigai</span>
+    </a>
+
+    <span>Footer Stuff &copy;</span>
+  </div>
+
+</div>

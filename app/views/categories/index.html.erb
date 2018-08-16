@@ -43,11 +43,13 @@
 
     <span class="mission"><b>Ikigai (生き甲斐)</b> <br>(n.) lit. "<i>a reason for being</i>"; 'a reason to get up in the morning,' to enjoy the meaning of life - passion, purpose, something one lives for.</span>
 
-    <a href="/users/new">
-      <div class="signup">
-      sign up &rarr;
-      </div>
-    </a>
+    <% if !logged_in? %>
+      <a href="/users/new">
+        <div class="signup">
+        sign up &rarr;
+        </div>
+      </a>
+    <% end %>
   </div>
 
 </div>
