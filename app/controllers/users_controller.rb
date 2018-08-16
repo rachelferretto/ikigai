@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        
+
         @categories = Category.all
         @skills = params[:skills]
         if @user.email_taken?
@@ -32,13 +32,15 @@ class UsersController < ApplicationController
             end
             session[:user_id] = @user.id
             flash[:success] = "Welcome to ikigai!"
-            redirect_to @user
+            redirect_to current_user
         end
  
         # add flash[:success] to user/id/show page after!!!
     end
 
     def show
+            current_user
+    
             @sent_requests = Request.where(user: current_user).current
             @received_requests =Request.where(mentor_id: current_user.id).pending
     
@@ -66,7 +68,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :email, :password, :password_confirmation)
+        params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation)
     end
 
 
