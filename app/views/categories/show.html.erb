@@ -53,7 +53,7 @@
           <div class="mentor_bio">
             <p><%=skill.user.bio %></p>
 
-            <form action="/requests/new/<%= skill.user.id%>" method="get">
+            <form action="/requests/new?id=<%= skill.user.id%>" method="get">
                 <button>Request Mentor </button>
             </form>
           </div>
