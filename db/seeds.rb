@@ -138,13 +138,13 @@ categories.each do |category|
     c.save
   end
 
-request1 = Request.create(title: 'Looking for a mentor', user: justin, request_message: 'Hi im looking for a mentor', category: 'Sci-fi and games', request_status: 'open')
+request1 = Request.create(title: 'Looking for a mentor', user: justin, request_message: 'Hi im looking for a mentor', category: 'Sci-fi and games', request_status: 'pending')
 
-request2 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Food and Drink', request_status: 'open')
+request2 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Food and Drink', request_status: 'pending')
 
-request3 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Music', request_status: 'open')
+request3 = Request.create(title: 'Looking for a mentor', user: oprah, request_message: 'Hi im looking for a mentor', category: 'Music', request_status: 'pending')
 
-request4 = Request.create(title: 'Looking for a mentor', user: justin, mentor_id: oprah.id,request_message: 'Hi im looking to write a book and could use a mentor', category: 'Writing', request_status: 'open')
+request4 = Request.create(title: 'Looking for a mentor', user: justin, mentor_id: oprah.id,request_message: 'Hi im looking to write a book and could use a mentor', category: 'Writing', request_status: 'pending')
 
 
 interest1 = Interest.create(keyword: '', user: oprah, category: 'Photography')
