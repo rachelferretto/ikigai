@@ -55,6 +55,10 @@
                     <%= m.title%>
                   </h3>
 
+                  <h4>
+                  from: <%=m.user.firstname%>
+                  </h4>
+
                   <h4>in:
                     <%= m.category %>
                   </h4>
@@ -185,10 +189,27 @@
                 <%if r.hidden?%>
                   <p>message hidden</p>
                 <%else%>
-                  <%=r.title%>
-                  From:<%=r.user.firstname%>
-                  status:
-                  <%=r.request_status%>
+                <h4>
+                  <%= r.title%>
+                </h4>
+
+                <h4>
+                from: <%=r.user.firstname%>
+                </h4>
+
+                <h4>in:
+                  <%= r.category %>
+                </h4>
+
+                <p>
+                  <%= r.request_message%>
+                </p>
+
+                <h4>
+                  <%= r.created_at.strftime("%b %d, %Y at %H:%M%P")%>
+                </h4>
+                  <!-- status:
+                  <%=r.request_status%> -->
                   <%= form_for r, method: :put do |f| %>
                   <%=f.submit 'accept'%>
                   <button>
