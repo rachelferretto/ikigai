@@ -129,6 +129,8 @@ skill31 = Skill.create(keyword: '', user: tom, category:'Music')
 skill32 = Skill.create(keyword: '', user: meghan, category:'Sci-fi and games')
 skill33 = Skill.create(keyword: '', user: leah, category:'Technology')
 skill34 = Skill.create(keyword: '', user: kate, category:'Hobbies and crafts')
+skill35 = Skill.create(keyword: '', user: martha, category:'Writing')
+skill36 = Skill.create(keyword: '', user: julie, category:'Movements')
 
 
 
