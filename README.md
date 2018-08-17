@@ -9,21 +9,22 @@ The ikigai team make no representations, warranties, or assurances as to the acc
 ## Teach Something, Learn Something
 Find your perfect mentor or mentor someone else
 
-##Features:
+## Features:
 * Create an account (or log in if you are returning to the site)
 * Select your skills and let other users know what you skills you can help with
 * Browse categories and mentors on the explore page
 * Request your preferred mentor, or send a broadcast request to all potential mentors in a particular category
 * On the dashboard, a mentor can review the requests they have received and accept or decline, as well as see what request's they've made.
 
-##Roadmap
+## Roadmap
 * Ability to rate a mentor/provide feedback
 * View archived requests
+* Ability to delete profile
 
-##Accessing the app
+## Accessing the app
 * Heroku link: https://dutch-uncle.herokuapp.com/
 
-###System
+### System
 * A ruby on rails application
 * Ruby version 2.5.1
 
