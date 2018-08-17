@@ -94,6 +94,9 @@ julie = User.create(firstname: 'Julie', lastname: 'Bishop', email: 'julie@email.
 
     kate = User.create(firstname: 'Kate', lastname: 'Sy', email: 'kate@email.com', password: 'pudding', profile_url: 'https://cdn1.vectorstock.com/i/1000x1000/81/80/woman-flying-drone-vector-13758180.jpg', zip_code: 3010, bio: 'Drone Pilot and Currently combining my love for learning and creativity to pursue a career in web development. Enjoying all the challenges coding brings and building tangible products through code, whether a small function or an entire application. Bringing a unique perspective to the process, through professional experience gained in various industries.' )
 
+    marie = User.create(firstname: 'Marie', lastname: 'Barone', email: 'marie@email.com', password: 'pudding', profile_url: 'http://images6.fanpop.com/image/photos/40000000/Doris-Roberts-doris-roberts-40064682-352-480.jpg', zip_code: 3010, bio: 'She is an amazing cook and always has a clean house (Decorated in 1960s/1970s style) with plastic on the sofa. Marie often openly criticizes Rays wife, Debra, for not keeping her own house "clean enough" and feeding her family properly and she dismisses anyone who doesnt live up to her standards. She thinks Debra is a bossy wife for expecting Raymond to act like a responsible adult. Even though she loves Frank, she constantly bickers with him and calls him a lazy, stubborn slob..' )
+
+
 
 skill1 = Skill.create(keyword: '', user: oprah, category: 'Writing')
 skill2 = Skill.create(keyword: '', user: gordon, category: 'Food and Drink')
@@ -131,6 +134,7 @@ skill33 = Skill.create(keyword: '', user: leah, category:'Technology')
 skill34 = Skill.create(keyword: '', user: kate, category:'Hobbies and crafts')
 skill35 = Skill.create(keyword: '', user: martha, category:'Writing')
 skill36 = Skill.create(keyword: '', user: julie, category:'Movements')
+skill37 = Skill.create(keyword: '', user: marie, category:'Family')
 
 
 
