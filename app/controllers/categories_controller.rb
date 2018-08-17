@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
     end
 
     def show
+        redirect_to'/' unless logged_in?
         @category = Category.find(params[:id])
         @skill = @category.name
         # @users = User.where()
