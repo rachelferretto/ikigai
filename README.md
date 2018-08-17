@@ -21,7 +21,7 @@ Find your perfect mentor or mentor someone else
 * View archived requests
 
 ##Accessing the app
-* Heroku link: 
+* Heroku link: https://dutch-uncle.herokuapp.com/
 
 ###System
 * A ruby on rails application
