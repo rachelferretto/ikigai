@@ -1,10 +1,12 @@
 <div class="mentors_grid">
 
   <div class="nav_bar">
-    <% if logged_in? %>
-    <span class="current_user">Hi, <%= current_user.firstname %></span>
-
+    <div></div>
     <div class="nav_controls">
+
+      <% if logged_in? %>
+      <span class="current_user">Hi, <%= current_user.firstname %></span>
+
       <% if logo? %>
         <i class="alert far fa-envelope"></i>
       <% end %>
