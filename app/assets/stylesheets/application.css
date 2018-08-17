@@ -324,7 +324,7 @@ footer {
   text-transform: lowercase;
 }
 
-.login_cont form input {
+.login_cont form input, textarea {
   padding: 5px;
   background-color: white;
   border-radius: 5px;
@@ -334,8 +334,16 @@ footer {
   margin: 10px;
 }
 
-.login_cont form input:focus {
+.login_cont form input:hover, textarea:hover {
   background-color: white;
+  color: black;
+  font-size: 100%;
+  outline: none;
+}
+
+.login_cont form input:focus, textarea:focus {
+  background-color: white;
+  color: black;
   font-size: 100%;
   outline: none;
 }
