@@ -1,28 +1,58 @@
-<%if @mentor_id %>
-    <p>Send a direct request to <%= @mentor.firstname%> <%=@mentor.lastname%></p>
-   
-<% else %>
-    <h1>new request </h1> 
-<%end%>
+<div class="login_grid">
 
-<%= form_for(@request) do |f| %>
-    
-    <%if @mentor_id %>
-        <input type="hidden" name="mentor_id" value="<%= @mentor_id%>">
+  <div class="nav_bar">
 
-    <%else%>
-        <select name="category">
-            <% @categories.each do |c| %>
-                <option value="<%= c.name%>"><%= c.name%></option>
-            <%end%>
-        </select>
+    <% if flash[:notice] %>
+        <% flash[:notice].each do |error| %>
+            <%= error %>
+        <% end %>
     <% end %>
 
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  </div>
 
-    <%= f.label :message %>
-    <%= f.text_area :request_message %><span>From: <%= current_user.firstname %> <%= current_user.lastname %></span>
-    <br>
-    <%= f.submit "send request"%>
-<% end %>
+  <div class="s_logo_cont">
+    <a href="/"><div class="s_logo">
+      ikigai
+    </div></a>
+  </div>
+
+  <div class="login_cont">
+
+    <%if @mentor_id %>
+        <p>to: <%= @mentor.firstname%> <%=@mentor.lastname%></p>
+
+    <% else %>
+        <h1>new request</h1>
+    <%end%>
+
+    <%= form_for(@request) do |f| %>
+
+        <%if @mentor_id %>
+            <input type="hidden" name="mentor_id" value="<%= @mentor_id%>">
+
+        <%else%>
+            <select name="category">
+                <% @categories.each do |c| %>
+                    <option value="<%= c.name%>"><%= c.name%></option>
+                <%end%>
+            </select>
+        <% end %>
+
+        <%= f.text_field :title, placeholder: "title" %>
+
+        <%= f.text_area :request_message, placeholder: "message" %><span>From: <%= current_user.firstname %> <%= current_user.lastname %></span>
+        <br>
+        <input type="submit" name="commit" value="send &rarr;" data-disable-with="send request">
+    <% end %>
+
+  </div>
+
+  <div class="footer_bar">
+    <a href="">
+      <span>About Ikigai</span>
+    </a>
+
+    <span>Footer Stuff &copy;</span>
+  </div>
+
+</div>
