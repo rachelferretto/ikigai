@@ -136,6 +136,11 @@ skill35 = Skill.create(keyword: '', user: martha, category:'Writing')
 skill36 = Skill.create(keyword: '', user: julie, category:'Movements')
 skill37 = Skill.create(keyword: '', user: marie, category:'Family')
 
+skill38 = Skill.create(keyword: '', user: bear, category:'Food and Drink')
+skill39 = Skill.create(keyword: '', user: darth, category:'Movements')
+
+skill40 = Skill.create(keyword: '', user: meghan, category:'Writing')
+skill41 = Skill.create(keyword: '', user: emmanuel, category:'LGBTQ')
 
 
 
