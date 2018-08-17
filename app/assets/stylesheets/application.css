@@ -606,7 +606,10 @@ footer {
 }
 
 .request_inbox, .broadcast_feed {
-  height: 100%;
+}
+
+.broadcast_feed {
+  overflow: scroll;
 }
 
 .dashboard_title {
