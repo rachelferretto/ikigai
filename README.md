@@ -1,6 +1,6 @@
 # README
 ### Disclaimer
-All characters and users on this site even those based on real people - are entirely fictional, and due to it's content should not be used by anyone.
+All characters and users on this site even those based on real people - are entirely fictional, and due to it's content should not be used by anyone...
 
 The ikigai team no representations, warranties, or assurances as to the accuracy, currency or completeness of the content contained on this website or any sites linked to or from this site.
 
