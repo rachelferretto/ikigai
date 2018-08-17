@@ -50,17 +50,25 @@
           <% @received_requests.each do |m|%>
             <div class="request">
               <% if m.hidden? ==false %>
-                <p>title:
-                  <%= m.title%></p>
-                <p>category:
-                  <%= m.category %></p>
-                <p>message:
-                  <%= m.request_message%></p>
-                <p>time:
-                  <%= m.created_at%></p>
+
+                  <h3>
+                    <%= m.title%>
+                  </h3>
+
+                  <h4>in:
+                    <%= m.category %>
+                  </h4>
+
+                  <p>
+                    <%= m.request_message%>
+                  </p>
+
+                  <h4>
+                    <%= m.created_at.strftime("%b %d, %Y at %H:%M%P")%>
+                  </h4>
 
                 <%= form_for m, method: :put do |f| %>
-                  <%=f.submit 'accept'%>
+                  <input type="submit" name="commit" value="accept" data-disable-with="accept">
                   <%=f.submit 'decline'%>
                 <%end%>
 
@@ -81,16 +89,27 @@
             <% @sent_requests.each do |m|%>
               <%if m.mentor_id %>
                 <div class="request">
-                  <p>title:
-                    <%= m.title%></p>
-                  <p>message:
-                    <%= m.request_message%></p>
-                  <p>time:
-                    <%= m.created_at%></p>
-                  <p>to:
-                    <%= User.find(m.mentor_id).firstname %></p>
-                  <p>status:
-                    <%= m.request_status%></p>
+
+                  <h3>to: <%= User.find(m.mentor_id).firstname %></h3>
+
+                  <h3>
+                    <%= m.title%>
+                  </h3>
+
+                  <h4>in:
+                    <%= m.category %>
+                  </h4>
+
+                  <p>
+                    <%= m.request_message%>
+                  </p>
+
+                  <h4>
+                    <%= m.created_at.strftime("%b %d, %Y at %H:%M%P")%>
+                  </h4>
+
+                  <!-- <p>status:
+                    <%= m.request_status%></p> -->
 
                   <%if m.request_status == 'accept'%>
                     <%= form_for m, method: :put do |f| %>
