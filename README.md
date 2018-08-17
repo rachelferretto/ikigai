@@ -1,24 +1,31 @@
 # README
+### Disclaimer
+All characters and users on this site even those based on real people - are entirely fictional, and due to it's content should not be used by anyone.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The ikigai team no representations, warranties, or assurances as to the accuracy, currency or completeness of the content contained on this website or any sites linked to or from this site.
 
-Things you may want to cover:
 
-* Ruby version
+# ikigai
+## Teach Something, Learn Something
+Find your perfect mentor or mentor someone else
 
-* System dependencies
+##Features:
+* Create an account (or log in if you are returning to the site)
+* Select your skills and let other users know what you can help with
+* Browse categories and mentors on the explore page
+* Request your preferred mentor, or send a broadcast request to all potential mentors in a particular category
 
-* Configuration
+##Roadmap
+* Ability to rate a mentor/provide feedback
+* View archived requests
 
-* Database creation
+##Accessing the app
+* Heroku link: 
 
-* Database initialization
+###System
+* A ruby on rails application
+* Ruby version 2.5.1
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
