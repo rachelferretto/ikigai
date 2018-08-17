@@ -39,8 +39,7 @@ class UsersController < ApplicationController
     end
 
     def show
-            current_user
-    
+            redirect_to'/' unless logged_in?
             @sent_requests = Request.where(user: current_user).current
             @received_requests =Request.where(mentor_id: current_user.id).pending
     
@@ -50,10 +49,12 @@ class UsersController < ApplicationController
 
 
     def edit
+        redirect_to'/' unless logged_in?
         render :edit
     end
 
     def update
+        redirect_to'/' unless logged_in?
         @user = current_user
         @user.profile_url = params[:profile_url]
         @user.firstname = params[:firstname]
@@ -68,7 +69,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation)
+        params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation, :profile_url)
     end
 
 

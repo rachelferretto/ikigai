@@ -39,6 +39,7 @@ class RequestsController < ApplicationController
 
 
     def update
+        redirect_to'/' unless logged_in?
         request = Request.find(params[:id])
         request.request_status = params[:commit]
         request.save
@@ -47,6 +48,7 @@ class RequestsController < ApplicationController
     end
 
     def destroy
+        redirect_to'/' unless logged_in?
         request = Request.find(params[:id])
         request.destroy
         request.save
@@ -55,6 +57,7 @@ class RequestsController < ApplicationController
     end
 
     def hide
+        redirect_to'/' unless logged_in?
         @request = Request.find(params[:id])
         if @request.hide_by == nil
             @request.hide_by = current_user.id
